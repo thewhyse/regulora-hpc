@@ -1,0 +1,126 @@
+.share-buttons {
+  display: flex;
+
+  .title,
+  p {
+    margin-bottom: 0;
+    line-height: 30px;
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    color: $gray;
+    font-weight: 700;
+  }
+
+  .a2a_svg {
+    border-radius: 0 !important;
+
+    svg {
+      width: 15px;
+      height: 30px;
+    }
+  }
+
+  .addtoany_list {
+    line-height: unset!important;
+
+    a {
+      padding: 0 5px;
+  
+      &:first-child {
+        padding-left: 0;
+      }
+  
+      &:last-child {
+        padding-right: 0;
+      }
+  
+      &:hover {
+        img,
+        span {
+          opacity: 1;
+          background-color: $secondary !important;
+        }
+      }
+    }
+  }
+  
+
+  .addtoany_shortcode + p {
+    display: none;
+  }
+}
+
+.socials .social-icon-linkedin {
+    width: 37px;
+    height: 35px;
+    fill: $primary;
+    stroke: $primary;
+}
+
+.single-attorney {
+  .share-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;   
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .page-template-default:not(.home),
+  .page-template {
+    .header-banner-big {
+      margin-bottom: 65px;
+    }
+
+    .wp-block-columns {
+      position: relative;
+    }
+
+    .is-style-share-buttons,
+    .is-style-.share-buttons {
+      position: absolute;
+      top: -85px;
+    }
+  }
+
+  .single-attorney {
+    .page-title-header {
+      margin-bottom: 105px;
+    }
+
+    .share-buttons {
+      left: 0;
+      top: -85px;
+    }
+  }
+
+  .single-practice,
+  .single-post {
+    .page-title-header {
+      margin-bottom: 105px;
+    }
+
+    .share-buttons {
+      position: absolute;
+      top: -85px;
+    }
+  }
+
+  .share-buttons {
+    margin-bottom: var(--block-vertical-distance-small);
+
+    p,
+    .title {
+      font-size: 14px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+  } 
+  .socials .social-icon-linkedin {
+    width: 27px;
+    height: 26px;
+  }
+}

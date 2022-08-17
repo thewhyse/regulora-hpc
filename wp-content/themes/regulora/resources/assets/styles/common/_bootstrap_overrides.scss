@@ -1,0 +1,89 @@
+/** Grid Setup **/
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    //xxxl: 1520px
+);
+
+$container-max-widths: (
+    xxs: 100%,
+    xs: 375px,
+    sm: 544px,
+    md: 768px,
+    lg: 960px,
+    xl: 1120px,
+    xxl: 1350px,
+    //xxxl: 1520px,
+);
+
+/** Colors Setup **/
+$primary: #7A95BF;//#47c8f5
+$secondary: #6FD3C8;
+$primary-light: #A3B7DA;
+$blue:#7F9AC6;
+$blue-light: #E1E6EF;
+$yellow: #EFCE1D;
+$gray: #5B5D5C;
+$black: #333333;
+$white: #fff;
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  blue: $blue,
+  gray: $gray,
+  black: $black,
+  white: $white,
+);
+
+$body-color: $black;
+
+$link-color: $black;
+$link-hover-color: $primary;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+/** Block Styles Setup **/
+$enable-rounded: true;
+
+/** Typografy Setup **/
+$font-family-base: 'Montserrat', sans-serif;
+$headings-font-family: 'Montserrat', sans-serif;
+// $font-size-base: 1.5rem; //18px
+//$h1-font-size: 4.25rem; //68px
+//$h2-font-size: 2.625rem; //42px
+//$h3-font-size: 1.875rem; //30px
+//$h4-font-size: 1.25rem; //20px
+//$line-height-base: 2rem; //32px
+$headings-font-weight: 700;
+$headings-color: $gray;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+// Accordion
+$accordion-icon-color: $yellow;
+$accordion-icon-active-color: $yellow;
+$accordion-border-width: 0;
+$accordion-border-radius: 10px;
+$accordion-padding-y: 0;
+$accordion-padding-x: 0;
+$accordion-body-padding-y: 30px;
+$accordion-body-padding-x: 35px;
+$accordion-button-padding-y: 30px;
+$accordion-button-padding-x: 50px;
+$accordion-button-color: $white;
+$accordion-button-active-color: $white;
+$accordion-button-bg: $primary;
+$accordion-button-active-bg: $primary;
+//$accordion-button-active-icon: $primary;
+$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='#{$accordion-icon-color}'><path d='M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z'/></svg>");
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='#{$accordion-icon-active-color}'><path d='M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z'/></svg>");
+
+//$accordion-icon-active-color: $yellow;
+

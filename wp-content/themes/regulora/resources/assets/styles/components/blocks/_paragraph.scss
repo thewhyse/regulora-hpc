@@ -1,0 +1,81 @@
+p {
+  margin-bottom: 1.5rem;
+  
+  &.is-style-stroke-style {
+    color: #fff;
+    font-size: 80px;
+    margin: 10px 0;
+    position: relative;
+    line-height: 1;
+    text-shadow: 1px 1px 0 $blue, -1px 1px 0 $blue, 1px -1px 0 $blue, -1px -1px 0 $blue, 0px 1px 0 $blue, 0px -1px 0 $blue, -1px 0px 0 $blue, 1px 0px 0 $blue, 2px 2px 0 $blue, -2px 2px 0 $blue, 2px -2px 0 $blue, -2px -2px 0 $blue, 0px 2px 0 $blue, 0px -2px 0 $blue, -2px 0px 0 $blue, 2px 0px 0 $blue, 1px 2px 0 $blue, -1px 2px 0 $blue, 1px -2px 0 $blue, -1px -2px 0 $blue, 2px 1px 0 $blue, -2px 1px 0 $blue, 2px -1px 0 $blue, -2px -1px 0 $blue;
+
+    &:before {
+      content: ' ';
+      height: 3px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      right: 50%;
+      background: $secondary;
+      border-radius: 0 10px 10px 0;
+      z-index: -1;
+    }
+
+    &:after {
+      content: ' ';
+      height: 3px;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      left: 50%;
+      background: $secondary;
+      border-radius: 10px 0 0 10px;
+      z-index: -1;
+    }
+  }
+
+  &.is-style-border-bottom {
+    border-bottom: 2px solid;
+    padding: 0 0 10px;
+    margin: 0;
+    display: inline;
+  }
+
+  &.is-style-narrow {
+    max-width: 910px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &.has-extra-large-font-size {
+    font-size: 75px;
+  }
+
+  &.has-small-font-size {
+    font-size: 16px;
+  }
+
+  &.has-regular-font-size {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+@include media-breakpoint-down(xxl) {
+  p.has-extra-large-font-size {
+    font-size: 65px;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  p.has-extra-large-font-size {
+    line-height: 75px;
+    font-size: 75px;
+  }
+
+  p.has-small-font-size {
+    font-size: 14px;
+  }
+}

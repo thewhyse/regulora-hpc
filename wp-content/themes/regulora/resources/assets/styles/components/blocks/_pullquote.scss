@@ -1,0 +1,65 @@
+.wp-block-pullquote {
+  padding: 50px 0;
+
+  blockquote {
+    margin-bottom: 0;
+    max-width: var(--main-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    p {
+      font-size: 42px;
+      margin-bottom: 0;
+    }
+  }
+
+  &.is-style-with-lines {
+    position: relative;
+
+    &::before {
+      content: ' ';
+      height: 8px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: calc((100vw - var(--main-width)) / 2);
+      background: $primary;
+      border-radius: 0 10px 10px 0;
+    }
+
+    &::after {
+      content: ' ';
+      height: 8px;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: calc((100vw - var(--main-width)) / 2);
+      background: $primary-light;
+      border-radius: 10px 0 0 10px;
+    }
+
+    &.animate {
+      &::before {
+        right: 100vw;
+        transition: all 1.3s ease-in-out;
+      }
+
+      &::after {
+        left: 100vw;
+        transition: all 1.3s ease-in-out;
+      }
+
+      &.action {
+        &::before {
+          right: calc((100vw - var(--main-width)) / 2);
+        }
+
+        &::after {
+          left: calc((100vw - var(--main-width)) / 2);
+        }
+      }
+    }
+  }
+}

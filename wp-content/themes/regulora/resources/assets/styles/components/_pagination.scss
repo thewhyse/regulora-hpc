@@ -1,0 +1,61 @@
+.pagination {
+  margin: 70px 0 0;
+  display: flex;
+  justify-content: center;
+
+  .next,
+  .prev {
+    svg {
+      width: 14px;
+      height: 24px;
+
+      path {
+        fill: $primary;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  .page-numbers {
+    padding: 0 14px 0 15px;
+    border-right: 1px solid $black;
+    color: $primary;
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+
+    &.current {
+      color: $black;
+    }
+
+    &:not(.dots):hover {
+      color: $secondary;
+
+      svg path {
+        fill: $secondary;
+      }
+    }
+  }
+
+  .next {
+    border-right: none;
+
+    & ~ a {
+      border-right: none;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .pagination {
+    margin-left: 0;
+
+    .page-numbers {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+  
+
+}

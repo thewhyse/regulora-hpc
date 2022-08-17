@@ -1,0 +1,83 @@
+@mixin small-arrow($size:50%, $padding-left:20px) {
+  position: relative;
+
+  &::after {
+    content: "";
+    background-image: url($chevron-primary);
+    color: $secondary;
+    font-weight: 700;
+    padding-left: $padding-left;
+    transition: all 0.2s;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: $size;
+    overflow: hidden;
+  }
+
+  &:hover {
+    &::after {
+      margin-left: 10px;
+      margin-right: -10px;
+      background-image: url($chevron-primary-hover);
+    }
+  }
+}
+
+@mixin big-arrow-hover {
+  &::after {
+    content: "";
+    background-image: url($arrow-right-hover);
+    right: 0;
+  }
+}
+
+@mixin big-arrow {
+  font-size: 20px;
+  line-height: 1.2;
+
+  &::after {
+    content: "";
+    background-image: url($arrow-right);
+    width: 20px;
+    height: 24px;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    margin-top: -12px;
+    transition: all 0.2s;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover {
+    @include big-arrow-hover;
+  }
+
+  @include media-breakpoint-down(lg) {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}
+
+@mixin image-size($size:61.66%) {
+  height: 0;
+  padding-top: $size;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  img,
+  picture {
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+  }
+}
+
+@mixin image-hover($scale:1.05) {
+  transform: scale($scale);
+}

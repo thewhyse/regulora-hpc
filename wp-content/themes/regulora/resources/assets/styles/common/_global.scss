@@ -1,0 +1,294 @@
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-size: 22px;
+  line-height: 1.5;
+  position: relative;
+
+  &.menu-show {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.container-fluid-with-padding {
+  @extend .container-fluid;
+
+  width: auto;
+  margin-left: var(--container-fluid-margin);
+  margin-right: var(--container-fluid-margin);
+}
+
+h1,
+.h1 {
+  font-size: 60px;
+  line-height: 1.29;
+  margin: 50px 0 60px;
+}
+
+h2,
+.h2 {
+  font-size: 36px;
+  line-height: 1.28;
+  margin-bottom: 35px;
+  font-weight: 700;
+}
+
+h3,
+.h3 {
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+h4,
+.h4 {
+  font-size: 26px;
+  line-height: 1.15;
+  margin-bottom: 25px;
+
+  &.has-bigger-font-size {
+    font-size: 28px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 22px;
+  line-height: 1;
+
+  &.has-bigger-font-size {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+::marker {
+  color: $secondary;
+}
+
+.wp-block-separator {
+  border-bottom: 0;
+}
+
+/* Custom global styles */
+.mb-18 {
+  margin-bottom: var(--margin-bottom-18) !important;
+}
+
+.mb-45 {
+  margin-bottom: var(--margin-bottom-45) !important;
+}
+
+.mb-65 {
+  margin-bottom: var(--margin-bottom-65) !important;
+}
+
+.my-125 {
+  margin-top: var(--margin-side-125);
+  margin-bottom: var(--margin-side-125);
+}
+
+.py-125 {
+  padding-top: var(--margin-side-125) !important;
+  /*padding-bottom: var(--margin-side-125) !important;*/
+  padding-bottom: 0 !important;
+}
+
+.mw-90pc {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Transitions */
+a,
+.hov-trans {
+  transition: color ease-in-out 0.2s;
+
+  svg * {
+    transition: color, fill, stroke ease-in-out 0.2s;
+  }
+}
+
+.readmore-hidden {
+  .readmore-but {
+    display: none;
+  }
+}
+
+.lines-v {
+  position: relative;
+  padding-left: 45px;
+
+  &::before {
+    content: ' ';
+    width: 15px;
+    height: 120px;
+    background: url("../images/lines-v.png") top left no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.padding {
+    &::before {
+      content: '';
+    }
+  }
+}
+
+/* Lines animation */
+.with-lines {
+  position: relative;
+
+  &::before {
+    content: ' ';
+    height: 8px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: calc((100vw - var(--main-width)) / 2);
+    background: $primary;
+    border-radius: 0 10px 10px 0;
+  }
+
+  &::after {
+    content: ' ';
+    height: 8px;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: calc((100vw - var(--main-width)) / 2);
+    background: $primary-light;
+    border-radius: 10px 0 0 10px;
+  }
+
+  &.animate {
+    &::before {
+      right: 100vw;
+      transition: all 1.3s ease-in-out;
+    }
+
+    &::after {
+      left: 100vw;
+      transition: all 1.3s ease-in-out;
+    }
+
+    &.action {
+      &::before {
+        right: calc((100vw - var(--main-width)) / 2);
+      }
+
+      &::after {
+        left: calc((100vw - var(--main-width)) / 2);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  html,
+  body {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  h1,
+  .h1 {
+    font-size: 50px;
+    line-height: 1.1;
+  }
+
+  h2,
+  .h2 {
+    font-size: 26px;
+    line-height: 1.23;
+    margin-bottom: 35px;
+  }
+
+  h3,
+  .h3,
+  h3.has-bigger-font-size {
+    font-size: 23px;
+    line-height: 1.39;
+  }
+
+  h4,
+  .h4 {
+    font-size: 17px;
+    line-height: 1.17;
+  }
+
+  h5,
+  .h5 {
+    font-size: 16px;
+    line-height: 1.625;
+  }
+
+  .has-small-font-size {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+
+  .has-regular-font-size {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .has-bigger-font-size {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .has-large-font-size {
+    font-size: 28px;
+    line-height: 1.71;
+  }
+
+  .is-style-align-left-mobile {
+    text-align: left;
+  }
+
+  p {
+    a {
+      white-space: nowrap;
+    }
+  }
+
+  .readmore-hidden {
+    height: 100px;
+    overflow: hidden;
+
+    .readmore-but {
+      display: block;
+      color: $primary;
+      position: absolute;
+      bottom: 0px;
+      background: #fff;
+      width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.opened {
+      height: auto;
+      overflow: hidden;
+      padding-bottom: 32px;
+    }
+  }
+}

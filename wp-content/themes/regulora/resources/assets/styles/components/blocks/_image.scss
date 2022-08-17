@@ -1,0 +1,283 @@
+.wp-block-image {
+  img {
+    height: auto;
+  }
+
+  &.with-lines {
+    position: relative;
+
+    &::before {
+      left: 20px;
+      right: 38%;
+      border-radius: 10px;
+    }
+
+    &::after {
+      right: 20px;
+      left: 38%;
+      border-radius: 10px;
+    }
+
+    &.animate {
+      &::before {
+        right: 100%;
+      }
+
+      &::after {
+        left: 100%;
+      }
+
+      &.action {
+        &::before {
+          right: 38%;
+        }
+
+        &::after {
+          left: 38%;
+        }
+      }
+    }
+  }
+
+  &.is-style-caption-right {
+    display: flex;
+    align-items: center;
+
+    figcaption {
+      color: $primary;
+      margin: 0 0 0 40px;
+    }
+  }
+
+  &.is-style-rounded {
+    img {
+      border-radius: 10px;
+    }
+
+    figcaption {
+      margin: 70px 0 70px;
+      min-height: 72px;
+    }
+  }
+
+  &.is-style-bottom-label {
+    text-align: center;
+
+    figcaption {
+      text-align: center;
+      color: $gray;
+      background: $secondary;
+      border-radius: 100px;
+      font-size: 22px;
+      line-height: 26px;
+      padding: 10px 30px;
+      margin: 0;
+      width: auto;
+      display: inline-block;
+    }
+  }
+
+  &.is-style-absolute-to-bottom {
+    position: relative;
+    margin: 0;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      max-width: 100%;
+    }
+
+    .alignright {
+      margin: 0;
+
+      img {
+        right: 0;
+      }
+    }
+  }
+
+  &.is-style-right-bottom-shift {
+    img {
+      display: inline-block;
+      margin: 0 0 -200px 0;
+    }
+  }
+
+  &.is-style-icon-with-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .aligncenter {
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      width: 179px;
+      height: 179px;
+      border-radius: 50%;
+      border: 4px solid $secondary;
+      //padding: 20px;
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.16);
+      background: $white;
+      object-fit: contain;
+      z-index: 1;
+    }
+
+    figcaption {
+      //min-height: 104px;
+      //display: flex;
+      align-items: center;
+      background: #285873;
+      color: #fff;
+      padding: 15px 20px 15px 80px;
+      border-radius: 0 100px 100px 0;
+      margin: 0 0 0 -50px;
+      font-weight: 500;
+      width: 450px;
+      max-width: 80%;
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    &.wide {
+      figcaption {
+        width: 600px;
+      }
+    }
+  }
+
+  &.is-style-bio {
+    position: relative;
+    margin-bottom: 0;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100px;
+      background: $gray;
+      display: block;
+      position: absolute;
+      border-radius: 100px;
+      bottom: 0;
+    }
+
+    img {
+      z-index: 1;
+      position: relative;
+      max-width: 70%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.wp-admin {
+  .wp-block-image {
+    &.is-style-caption-over-image {
+      a {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xxxl) {
+  .wp-block-image {
+    &.is-style-right-bottom-shift {
+      img {
+        margin: 100px 0 -200px 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xxl) {
+  .wp-block-image {
+    &.is-style-icon-with-text {
+      figcaption {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .wp-block-image {
+    &.is-style-rounded {
+      img {
+        border: 3px solid $secondary;
+        max-width: 235px;
+        max-height: 235px;
+      }
+
+      figcaption {
+        margin: 40px 0 40px;
+        min-height: auto;
+      }
+    }
+
+    &.is-style-right-bottom-shift {
+      figure.alignright {
+        margin: -3.5em -20px 0.5em 1em;
+      }
+
+      img {
+        margin: 20px 0 -160px 0;
+      }
+    }
+
+    &.is-style-icon-with-text {
+
+      img {
+        width: 110px;
+        height: 110px;
+      }
+
+      figcaption {
+        padding: 10px 10px 10px 60px;
+        max-width: 63%;
+      }
+
+      &.wide {
+        .aligncenter {
+          margin-left: 0;
+        }
+
+        figcaption {
+          width: 360px;
+          max-width: 80%;
+          font-size: 16px;
+        }
+      }
+    }
+
+    &.top-shift {
+      margin: 0;
+
+      figure {
+        margin: -7.5em 0 0 0.6rem;
+        z-index: 1;
+        position: relative;
+      }
+    }
+
+    &.is-style-bio {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .wp-block-image {
+    &.top-shift {
+      figure {
+        margin: -3.5em 0 0 0.6rem;
+      }
+    }
+  }
+}

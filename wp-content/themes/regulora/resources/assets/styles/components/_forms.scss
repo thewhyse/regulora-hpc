@@ -1,0 +1,149 @@
+/** Search form */
+.search-form {
+  //@extend .form-inline;
+}
+
+.search-form label {
+  //@extend .form-group;
+  font-weight: normal;
+}
+
+.search-form .search-field {
+  @extend .form-control;
+}
+
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-secondary;
+}
+
+/** Form Defaults */
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea,
+select {
+  width:100%;
+  padding: 16px 25px;
+  border-radius: 6px;
+  border: none;
+  background-color: $white;
+  box-shadow: 0 10px 48px rgba(0, 0, 0, 0.06);
+
+  &:focus-visible {
+    outline: -webkit-focus-ring-color solid 3px;
+  }
+
+  &.wpcf7-not-valid {
+    outline: red solid 3px;
+  }
+}
+
+input[type=submit] {
+  padding: 14px;
+  min-width: 450px;
+  border-radius: 100px;
+  border: none;
+  font-size: 26px;
+  font-weight: 700;
+  color: $primary;
+  background: $secondary;
+  transition: all 0.3s;
+
+  &:hover {
+    background: $blue;
+    color: $white;
+  }
+}
+
+select {
+  background: url($chevron-down) $white center right no-repeat;
+  background-size: 20px;
+  background-position-x: 99%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+.wpcf7-form-control-wrap + .chevron {
+  display: block;
+  width: 62px;
+  height: 30px;
+  background: url($chevron-primary) $white center no-repeat;
+  background-size: contain;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  margin-top: -15px;
+  border-radius: 5px 5px 0 0;
+}
+
+.screen-reader-response {
+  display: none;
+}
+
+.wpcf7-form {
+  &[data-status=sent],
+  &[data-status=resetting] {
+    .form-content {
+      display: none;
+    }
+
+    .wpcf7-response-output {
+      text-align: center;
+      padding: 100px 0;
+    }
+  }
+
+  &[data-status=invalid] {
+    .wpcf7-response-output {
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 50px;
+    }
+  }
+}
+
+.page-footer {
+  .wpcf7-form {
+    &[data-status=sent],
+    &[data-status=resetting] {
+      .wpcf7-response-output {
+        padding: 50px 0;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  select,
+  textarea {
+    margin-bottom: 20px;
+  }
+
+  select {
+    padding: 16px 40px 16px 25px;
+    background-position-x: 96%;
+  }
+
+  input[type=submit] {
+    padding: 10px;
+    min-width: 250px;
+    font-size: 20px;
+   }
+
+  .wpcf7-form {
+    &[data-status=sent],
+    &[data-status=resetting] {
+      .wpcf7-response-output {
+        padding: 20px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.wp-block-spacer {
+  &.is-style-spacer-75 {
+    height: var(--spacer-75) !important;
+  }
+
+   &.is-style-spacer-110 {
+    height: var(--spacer-110) !important;
+  }
+
+  &.is-style-spacer-120 {
+    height: var(--spacer-120) !important;
+  }
+}
+
+p + .wp-block-spacer {
+  &.is-style-spacer-110 {
+    height: calc(var(--spacer-110) - 30px) !important;
+  }
+}

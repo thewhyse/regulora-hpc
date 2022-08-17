@@ -1,0 +1,31 @@
+.wp-block-columns {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .wp-block-columns {
+    .wp-block-column {
+      &.mobile-border-bottom {
+        &::after {
+          margin-left: calc(var(--bs-gutter-x, 0.75rem) * -1);
+          margin-right: calc(var(--bs-gutter-x, 0.75rem) * -1);
+          content: "";
+          display: block;
+          height: 2px;
+          background: #f3f5f7;
+          margin-top: 75px;
+          margin-bottom: 75px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 781px) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
+    flex-basis: 100%!important;
+    margin-left: 0;
+  }
+}

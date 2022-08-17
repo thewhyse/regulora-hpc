@@ -1,0 +1,257 @@
+.attorney-top-bio {
+  margin-bottom: var(--block-vertical-distance-small);
+  position: relative;
+
+  .attorney-image {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .attorney-info {
+    position: initial;
+    padding-left: 60px;
+
+    .name {
+      display: flex;
+      align-items: center;
+    }
+
+    .socials {
+      margin: 0 0 6px 20px;
+    }
+  }
+}
+
+.attorneys-list {
+  .attorney-item {
+    margin: 32px 0;
+
+    &:hover {
+      picture img {
+        @include image-hover;
+      }
+
+      .attorney-info {
+        .title h2 {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  .attorney-thumb {
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+    width: 230px;
+    height: 230px;
+    overflow: hidden;
+    margin-right: 13px;
+
+    picture {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 230px;
+      height: 230px;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      max-width: initial;
+      transition: all 0.3s;
+    }
+  }
+
+  .attorney-info {
+    .position {
+      margin-bottom: 0;
+    }
+
+    .title {
+      margin-bottom: 0;
+
+      h2 {
+        transition: all 0.4s;
+      }
+
+      .socials {
+        padding-left: 5px;
+      }
+    }
+
+    .contacts {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      z-index: 1;
+
+      svg {
+        margin-right: 10px;
+        fill: $primary;
+      }
+    }
+  }
+}
+
+.news-item {
+  margin-bottom: var(--block-vertical-distance-small);
+
+  &:hover {
+    a {
+      color: $secondary;
+    }
+
+    h3 {
+      color: $secondary;
+    }
+
+    .is-style-link-with-arrow a {
+      @include big-arrow-hover;
+    }
+
+    picture:not(.default-featured-image) img {
+      @include image-hover;
+    }
+  }
+
+  picture {
+    @include image-size(61.66%);
+
+    margin-bottom: 18px;
+  }
+}
+
+.practice-archive-page {
+  h4 {
+    margin-bottom: 40px;
+  }
+}
+
+.search-results {
+  .search-lists {
+    .post-type-block {
+      margin-bottom: var(--block-vertical-distance-small);
+
+      .key-contact-item {
+        margin-bottom: var(--block-vertical-distance-small);
+
+        hr {
+          margin-top: 0;
+          color: #ccc;
+        }
+
+        .contact-item {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+.error404 {
+  .addtoany_share_save_container {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .attorney-top-bio {
+    .attorney-image {
+      margin-bottom: 20px;
+    }
+
+
+    .attorney-info {
+      padding-left: 15px;
+
+      .socials {
+        margin: 0 0 -6px 10px;
+      }
+
+      .description {
+        border-bottom: 1px solid $gray;
+        padding-bottom: var(--block-vertical-distance-small);
+        padding-top: 20px;
+      }
+    }
+  }
+
+
+  .attorneys-list {
+    .attorney-item {
+      margin: 32px 0 var(--block-vertical-distance-small);
+      padding-bottom: var(--block-vertical-distance-small);
+      border-bottom: 1px solid $gray;
+
+      &:last-child {
+        padding-bottom: 0;
+        border: none;
+      }
+    }
+
+    .attorney-thumb {
+      @include image-size($size:100%);
+
+      width: 100%;
+    }
+
+    .attorney-info {
+      .position {
+        margin: 29px 0 5px;
+      }
+
+      .title .socials {
+        padding-left: 0;
+        margin-left: -2px;
+      }
+
+      .contacts {
+        display: block;
+        margin: 20px 0 10px;
+
+        .contact-item {
+          padding: 0;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  .practice-item h4{
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+}
+
+@media all and (min-width: 989px) {
+  /*  PIPELINE PAGE   */
+  #mind-over-btn {
+    min-width: 330px !important;
+  }
+  /* END  PIPELINE PAGE   */
+}
+
+/*PRIVACY POLICY & TErMS AND CONDITIONS PAGES*/
+.page-privacy-policy-data,
+.page-terms-of-use-data {
+
+  .wrap.container {
+    max-width: 100%;
+    padding: 20px 50px;
+    margin: 0;
+    background: rgb(172,188,199);
+    background: linear-gradient(180deg, rgba(172, 188, 199, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 340px;
+    background-position: center 0;
+  }
+
+}
+/*   END  PRIVACY POLICY & TErMS AND CONDITIONS PAGES*/

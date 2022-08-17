@@ -1,0 +1,36 @@
+ul {
+  &.is-style-with-icon {
+    list-style: none;
+    padding: 0;
+
+    li {
+      position: relative;
+      padding: 0 0 0 130px;
+      margin: 0 0 20px 25px;
+
+      img {
+        position: absolute;
+        max-height: 90px;
+        max-width: 90px;
+        width: auto;
+        height: auto;
+        left: 0;
+
+        &::before {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+ol {
+  padding-left: 1.2rem;
+
+  li {
+    &::marker {
+      color: $black;
+      font-weight: 500;
+    }
+  }
+}
