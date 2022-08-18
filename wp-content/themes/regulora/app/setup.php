@@ -223,8 +223,13 @@ add_action('after_setup_theme', function () {
     add_theme_support( 'editor-font-sizes', array(
         array(
             'name' => __('Small', 'sage'),
-            'size' => 16,
+            'size' => 18,
             'slug' => 'small'
+        ),
+        array(
+            'name' => __('Smaller', 'sage'),
+            'size' => 20,
+            'slug' => 'smaller'
         ),
         array(
             'name' => __('Regular', 'sage'),

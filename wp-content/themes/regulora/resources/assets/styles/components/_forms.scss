@@ -24,35 +24,34 @@ input[type=tel],
 textarea,
 select {
   width:100%;
-  padding: 16px 25px;
-  border-radius: 6px;
+  padding: 12px 25px;
+  border-radius: 10px;
   border: none;
   background-color: $white;
-  box-shadow: 0 10px 48px rgba(0, 0, 0, 0.06);
 
   &:focus-visible {
     outline: -webkit-focus-ring-color solid 3px;
   }
 
   &.wpcf7-not-valid {
-    outline: red solid 3px;
+    outline: red solid 2px;
   }
 }
 
 input[type=submit] {
-  padding: 14px;
-  min-width: 450px;
+  padding: 12px;
+  min-width: 350px;
   border-radius: 100px;
   border: none;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
-  color: $primary;
-  background: $secondary;
+  color: $gray;
+  background: $blue-light;
   transition: all 0.3s;
 
   &:hover {
-    background: $blue;
-    color: $white;
+    background: $secondary;
+    color: $gray;
   }
 }
 
@@ -80,6 +79,57 @@ select {
   border-radius: 5px 5px 0 0;
 }
 
+input[type=checkbox] {
+  min-width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: $white;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: relative;
+    left: 33%;
+    top: 14%;
+    width: 37%;
+    height: 60%;
+    border: solid $primary;
+    border-width: 0 2px 2px 0;
+    transform: rotate(38deg);
+    display: none;
+  }
+
+  & + span:before {
+    content: "";
+    font-size: 18px;
+    color: $gray;
+    cursor: pointer;
+  }
+
+  &:hover {
+    & + span:before {
+      color: $primary;
+    }
+  }
+
+  &:checked {
+    &::after {
+      display: block;
+    }
+
+    & + span:before {
+      font-weight: 700;
+      color: $primary;
+    }
+  }
+}
+
 .screen-reader-response {
   display: none;
 }
@@ -99,9 +149,28 @@ select {
 
   &[data-status=invalid] {
     .wpcf7-response-output {
-      font-weight: 600;
+      font-weight: 500;
       text-align: center;
       margin: 0 0 50px;
+      color: $white;
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    color: $white;
+    font-size: 18px;
+  }
+
+  .wpcf7-list-item {
+    label {
+      display: flex;
+      align-items: center;
+    }
+
+    .wpcf7-list-item-label {
+      color: $white;
+      font-size: 16px;
+      font-weight: 500;
     }
   }
 }
