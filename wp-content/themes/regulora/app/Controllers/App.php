@@ -10,15 +10,18 @@ class App extends Controller
     use Helpers\HelperImages,
         Helpers\HelperSettings,
         Modules\ModuleBlockContent,
-        Modules\ModuleFaq
+        Modules\ModuleFaq,
+        Modules\ModuleSlider
     {
         Helpers\HelperImages::traitSetup insteadof Helpers\HelperSettings;
         Helpers\HelperImages::traitSetup insteadof Modules\ModuleBlockContent;
         Helpers\HelperImages::traitSetup insteadof Modules\ModuleFaq;
+        Helpers\HelperImages::traitSetup insteadof Modules\ModuleSlider;
         Helpers\HelperImages::traitSetup as traitSetupHI;
         Helpers\HelperSettings::traitSetup as traitSetupHS;
         Modules\ModuleBlockContent::traitSetup as traitSetupBC;
         Modules\ModuleFaq::traitSetup as traitSetupFAQ;
+        Modules\ModuleSlider::traitSetup as traitSetupSlider;
     }
 
     public static function setup()
@@ -28,6 +31,7 @@ class App extends Controller
         static::traitSetupHS();
         static::traitSetupBC();
         static::traitSetupFAQ();
+        static::traitSetupSlider();
     }
 
     public function siteName()

@@ -44,7 +44,7 @@ trait ModuleFaq
                     'align'             => array( 'center', 'wide', 'full' ),
                     'align_content'     => true,
                     'full_height'       => true,
-                    'mode'              => false,
+                    'mode'              => true,
                     'multiple'          => true,
                 ),
             ) );

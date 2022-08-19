@@ -163,11 +163,9 @@ trait ModuleBlockContent
                                     </div>
                                 <?php endif; ?>
                                 <?php if ( static::$postTitle ) : ?>
-                                    <div class="post-title">
-                                        <a href="<?= $post[ 'url' ] ?>">
-                                            <?= $post[ 'title' ] ?>
-                                        </a>
-                                    </div>
+                                    <h4 class="post-title">
+                                        <?= $post[ 'title' ] ?>
+                                    </h4>
                                 <?php endif; ?>
                                 <?php if ( static::$postDate ) : ?>
                                     <div class="post-date">
@@ -179,6 +177,9 @@ trait ModuleBlockContent
                                         <?= $post[ 'excerpt' ] ?>
                                     </div>
                                 <?php endif; ?>
+                                <a href="<?= $post[ 'url' ] ?>" class="read-more-link">
+                                    Read more <span class="visually-hidden"> about <?= $post[ 'title' ] ?></span>
+                                </a>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -221,11 +222,9 @@ trait ModuleBlockContent
                                 </div>
                             <?php endif; ?>
                             <?php if ( static::$postTitle ) : ?>
-                                <div class="post-title">
-                                    <a href="<?= $post[ 'url' ] ?>">
-                                        <?= $post[ 'title' ] ?>
-                                    </a>
-                                </div>
+                                <h4 class="post-title">
+                                    <?= $post[ 'title' ] ?>
+                                </h4>
                             <?php endif; ?>
                             <?php if ( static::$postDate ) : ?>
                                 <div class="post-date">
@@ -237,6 +236,9 @@ trait ModuleBlockContent
                                     <?= $post[ 'excerpt' ] ?>
                                 </div>
                             <?php endif; ?>
+                            <a href="<?= $post[ 'url' ] ?>" class="read-more-link">
+                                Read more <span class="visually-hidden"> about <?= $post[ 'title' ] ?></span>
+                            </a>
                         </div>
                     <?php endforeach; ?>
                 </div>

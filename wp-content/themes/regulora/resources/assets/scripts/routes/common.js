@@ -1,6 +1,7 @@
 /* eslint-disable */
 import {init as faqInit} from "../components/faq";
 import {init as contentBlock} from "../components/block-content";
+import {init as stepSlider} from "../components/step-slider";
 // import {ScrollSpy, Collapse} from "bootstrap";
 
 export default {
@@ -20,6 +21,7 @@ export default {
     // JavaScript to be fired on all pages, after page specific JS is fired
     faqInit();
     contentBlock();
+    stepSlider();
   
     const mobileMenu = document.getElementById( 'navPrimaryMenu' );
     const eyebrow = document.querySelector( '.eyebrow-section' );

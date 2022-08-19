@@ -16,6 +16,7 @@
 
 /** Import theme styles */
 @import "common/variables";
+@import "~tiny-slider/src/tiny-slider";
 @import "common/mixins";
 @import "common/global";
 @import "common/wp-grid";
@@ -40,6 +41,7 @@
 @import "components/blocks/spacer";
 @import "components/blocks/pullquote";
 @import "components/modules/query-content";
+@import "components/modules/step-slider";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";

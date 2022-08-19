@@ -2,9 +2,12 @@
   .block-inner {
     .list {
       .post-item {
-        margin-bottom: 1rem;
+        margin-bottom: 35px;
 
         .post-title {
+          margin-bottom: 10px;
+          text-transform: uppercase;
+
           a {
             font-weight: 500;
             color: $primary;
@@ -17,10 +20,16 @@
           color: $black;
           text-transform: uppercase;
         }
-        //
-        //.post-desc {
-        //
-        //}
+
+        .post-desc {
+          margin-bottom: 10px;
+
+          p {
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
 
         .read-more-link {
           color: $primary;

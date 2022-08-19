@@ -116,4 +116,11 @@ wp.domReady(() => {
       label: 'With White BG',
     },
   ]);
+  
+  wp.blocks.registerBlockStyle('core/heading', [
+    {
+      name: 'with-rounded-bg',
+      label: 'With Pill BG',
+    },
+  ]);
 });

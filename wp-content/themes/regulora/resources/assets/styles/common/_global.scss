@@ -20,6 +20,10 @@ body {
   margin-right: var(--container-fluid-margin);
 }
 
+#main-content {
+  font-weight: 500;
+}
+
 h1,
 .h1 {
   font-size: 60px;
@@ -125,6 +129,12 @@ h6,
 
 .mw-90pc {
   max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mw-890px {
+  max-width: 890px;
   margin-left: auto;
   margin-right: auto;
 }

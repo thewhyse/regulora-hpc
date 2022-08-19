@@ -145,7 +145,7 @@ add_filter( 'upload_mimes', function ( $mimes ) {
  */
 remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 add_filter( 'get_the_excerpt', function( $excerpt, $post ) {
-    $characters = 150; // character limit
+    $characters = 200; // character limit
     $raw_excerpt = $excerpt;
     if ( '' == $excerpt ) {
         $excerpt = $post->post_content;
@@ -162,7 +162,7 @@ add_filter( 'get_the_excerpt', function( $excerpt, $post ) {
             if ( in_array( substr( $return, -1 ), array( '.', ',', ':', ';' ) ) ) {
                 $return = substr( $return, 0, strlen( $return ) - 1 );
             }
-            return '<p>' . $return . '... <a href="' . get_the_permalink( $post->ID ) . '" class="read-more-link">Read more</a></p>';
+            return '<p>' . $return . '...</p>';
         }
     }
     return "<p>$excerpt...</p>";

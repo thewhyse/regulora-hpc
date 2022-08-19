@@ -1,5 +1,5 @@
 .pagination {
-  margin: 70px 0 0;
+  margin: 40px 0 0;
   display: flex;
   justify-content: center;
 
@@ -17,13 +17,13 @@
   }
 
   .page-numbers {
-    padding: 0 14px 0 15px;
+    padding: 0 12px 0 13px;
     border-right: 1px solid $black;
     color: $primary;
     text-align: center;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 26px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
 
     &.current {
       color: $black;
