@@ -2,6 +2,9 @@
 import {init as faqInit} from "../components/faq";
 import {init as contentBlock} from "../components/block-content";
 import {init as stepSlider} from "../components/step-slider";
+import {init as paragraphLineAnimation} from "../components/paragraph-line-animation";
+import {init as strokeLinesAnimation} from "../components/stroke-lines-animation";
+import {init as animationStart} from "../components/animate-by-viewport";
 // import {ScrollSpy, Collapse} from "bootstrap";
 
 export default {
@@ -57,5 +60,9 @@ export default {
         } )
       } )
     }
+  
+    paragraphLineAnimation();
+    strokeLinesAnimation();
+    animationStart();
   },
 };

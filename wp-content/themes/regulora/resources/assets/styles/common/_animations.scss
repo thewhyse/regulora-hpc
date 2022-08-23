@@ -1,0 +1,141 @@
+/* Lines animation */
+.with-lines {
+  position: relative;
+
+  &::before {
+    content: ' ';
+    height: 8px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: calc((100vw - var(--main-width)) / 2);
+    background: $primary;
+    border-radius: 0 10px 10px 0;
+  }
+
+  &::after {
+    content: ' ';
+    height: 8px;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: calc((100vw - var(--main-width)) / 2);
+    background: $primary-light;
+    border-radius: 10px 0 0 10px;
+  }
+
+  &.animate {
+    &::before {
+      right: 100vw;
+      transition: all 1.3s ease-in-out;
+    }
+
+    &::after {
+      left: 100vw;
+      transition: all 1.3s ease-in-out;
+    }
+
+    &.action {
+      &::before {
+        right: calc((100vw - var(--main-width)) / 2);
+      }
+
+      &::after {
+        left: calc((100vw - var(--main-width)) / 2);
+      }
+    }
+  }
+
+  &.short {
+    &::before {
+      right: 35%;
+      border-radius: 10px;
+    }
+
+    &::after {
+      left: 35%;
+      border-radius: 10px;
+    }
+
+    &.animate {
+      &.action {
+        &::before {
+          right: 35%;
+        }
+
+        &::after {
+          left: 35%;
+        }
+      }
+    }
+  }
+
+  &.secondary-color {
+    &::before {
+      background: $secondary;
+    }
+
+    &::after {
+      background: $secondary;
+    }
+  }
+}
+
+.line-animation {
+  display: inline;
+  margin: 0;
+
+  &:after {
+    content: "";
+    display: block;
+    position: relative;
+  }
+}
+
+.active-line {
+  display: block;
+  height: 5px;
+  position: absolute;
+  background: $blue;
+  transition: all 1.5s ease-in-out;
+
+  &.blue-light {
+    background: $blue-light;
+  }
+
+  &.primary {
+    background: $primary;
+  }
+
+  &.secondary {
+    background: $secondary;
+  }
+
+  &:not(.action) {
+    &.on-the-left {
+      right: 100vw !important;
+    }
+
+    &.on-the-right {
+      left: 100vw !important;
+    }
+  }
+}
+
+// Animations
+.fadeIn {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  &.action {
+    opacity: 1;
+  }
+}
+
+.is-root-container {
+  .fadeIn {
+    opacity: 1 !important;
+  }
+}

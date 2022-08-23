@@ -8,9 +8,13 @@ footer {
 
   .footer-logo {
     display: inline-block;
-    margin-bottom: 50px;
 
-    img {
+    img,
+    svg {
+      max-height: 95px;
+      max-width: 100%;
+      display: block;
+      width: auto;
       height: 95px;
     }
   }
@@ -74,21 +78,40 @@ footer {
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content: center;
 
     li {
       margin: 0 20px;
-      line-height: 18px;
+      line-height: 22px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       a {
         color: $gray;
-        font-size: 18px;
+        font-size: 22px;
+        font-weight: 500;
 
         &:hover {
           color: $primary;
           text-decoration: none;
         }
       }
+    }
+  }
+
+  .wp-block-button.is-style-simple-link a {
+    color: $gray;
+    font-size: 22px;
+    font-weight: 500;
+
+    &:hover {
+      color: $primary;
+      text-decoration: none;
     }
   }
 

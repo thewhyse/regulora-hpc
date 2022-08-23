@@ -41,14 +41,20 @@
     }
 
     &.animate {
+      transition: color 0.6s ease-in-out;
+
+      &:not(.action) {
+        color: $white !important;
+      }
+
       &::before {
         right: 100vw;
-        transition: all 1.3s ease-in-out;
+        transition: all 1.5s ease-in-out;
       }
 
       &::after {
         left: 100vw;
-        transition: all 1.3s ease-in-out;
+        transition: all 1.5s ease-in-out;
       }
 
       &.action {
@@ -58,6 +64,18 @@
 
         &::after {
           left: calc((100vw - var(--main-width)) / 2);
+        }
+      }
+    }
+  }
+}
+
+.is-root-container {
+  .wp-block-pullquote {
+    &.is-style-with-lines {
+      &.animate {
+        &:not(.action) {
+          color: inherit !important;
         }
       }
     }

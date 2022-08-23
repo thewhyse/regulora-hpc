@@ -339,6 +339,10 @@ add_action('widgets_init', function () {
         'id'            => 'sidebar-menu'
     ] + $config);
     register_sidebar([
+        'name'          => __('Under Footer Menu', 'sage'),
+        'id'            => 'sidebar-footer-under-menu'
+    ] + $config);
+    register_sidebar([
         'name'          => __('Footer Left', 'sage'),
         'id'            => 'sidebar-footer-left'
     ] + $config);

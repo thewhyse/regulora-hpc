@@ -1,8 +1,9 @@
 .wp-block-button {
   a {
-    font-size: 22px;
+    font-size: 18px;
     line-height: 27px;
     transition: all 0.3s;
+    padding: 8px 15px;
 
     &:hover {
       text-decoration: none;
@@ -20,6 +21,12 @@
         background: $secondary;
         color: $white !important;
       }
+    }
+  }
+
+  &.w-100 {
+    a {
+      width: 100%;
     }
   }
 

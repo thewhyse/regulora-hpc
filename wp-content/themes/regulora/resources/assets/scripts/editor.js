@@ -73,13 +73,13 @@ wp.domReady(() => {
     },
   ]);
 
-  // wp.blocks.registerBlockStyle('core/cover', [
-  //   {
-  //     name: 'text-left-with-overlay',
-  //     label: 'Text on the Left',
-  //   },
-  // ]);
-  //
+  wp.blocks.registerBlockStyle('core/cover', [
+    {
+      name: 'full-height-content',
+      label: 'Full Height Content',
+    },
+  ]);
+
   wp.blocks.registerBlockStyle('core/image', [
     {
       name: 'absolute-to-bottom',

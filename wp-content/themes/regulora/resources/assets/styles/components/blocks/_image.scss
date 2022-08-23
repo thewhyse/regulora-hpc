@@ -3,6 +3,12 @@
     height: auto;
   }
 
+  .aligncenter {
+    figcaption {
+      text-align: center;
+    }
+  }
+
   &.with-lines {
     position: relative;
 
@@ -19,6 +25,9 @@
     }
 
     &.animate {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+
       &::before {
         right: 100%;
       }
@@ -28,6 +37,8 @@
       }
 
       &.action {
+        opacity: 1;
+
         &::before {
           right: 38%;
         }
@@ -65,12 +76,12 @@
 
     figcaption {
       text-align: center;
-      color: $gray;
+      color: $black;
       background: $secondary;
       border-radius: 100px;
       font-size: 22px;
       line-height: 26px;
-      padding: 10px 30px;
+      padding: 10px 50px;
       margin: 0;
       width: auto;
       display: inline-block;
@@ -173,13 +184,19 @@
   }
 }
 
-.wp-admin {
+.is-root-container {
   .wp-block-image {
     &.is-style-caption-over-image {
       a {
         &::after {
           display: none;
         }
+      }
+    }
+
+    &.with-lines {
+      &.animate {
+        opacity: 1 !important;
       }
     }
   }

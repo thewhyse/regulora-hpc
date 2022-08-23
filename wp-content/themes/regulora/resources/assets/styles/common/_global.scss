@@ -161,103 +161,20 @@ a,
 
   &::before {
     content: ' ';
-    width: 15px;
+    width: 18px;
     height: 120px;
-    background: url("../images/lines-v.png") top left no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='124' viewBox='0 0 19 124'%3E%3Cg id='Double_Lines_2' data-name='Double Lines 2' transform='translate(2 2)'%3E%3Cline id='Line_362' data-name='Line 362' x1='90' transform='translate(15 30) rotate(90)' fill='none' stroke='%23a3b7da' stroke-linecap='round' stroke-width='4'/%3E%3Cline id='Line_363' data-name='Line 363' x1='90' transform='rotate(90)' fill='none' stroke='%237f9ac6' stroke-linecap='round' stroke-width='4'/%3E%3C/g%3E%3C/svg%3E");
     background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10px;
   }
 
   &.padding {
     &::before {
       content: '';
-    }
-  }
-}
-
-/* Lines animation */
-.with-lines {
-  position: relative;
-
-  &::before {
-    content: ' ';
-    height: 8px;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: calc((100vw - var(--main-width)) / 2);
-    background: $primary;
-    border-radius: 0 10px 10px 0;
-  }
-
-  &::after {
-    content: ' ';
-    height: 8px;
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: calc((100vw - var(--main-width)) / 2);
-    background: $primary-light;
-    border-radius: 10px 0 0 10px;
-  }
-
-  &.animate {
-    &::before {
-      right: 100vw;
-      transition: all 1.3s ease-in-out;
-    }
-
-    &::after {
-      left: 100vw;
-      transition: all 1.3s ease-in-out;
-    }
-
-    &.action {
-      &::before {
-        right: calc((100vw - var(--main-width)) / 2);
-      }
-
-      &::after {
-        left: calc((100vw - var(--main-width)) / 2);
-      }
-    }
-  }
-
-  &.short {
-    &::before {
-      right: 35%;
-      border-radius: 10px;
-    }
-
-    &::after {
-      left: 35%;
-      border-radius: 10px;
-    }
-
-    &.animate {
-      &.action {
-        &::before {
-          right: 35%;
-        }
-
-        &::after {
-          left: 35%;
-        }
-      }
-    }
-  }
-
-  &.secondary-color {
-    &::before {
-      background: $secondary;
-    }
-
-    &::after {
-      background: $secondary;
     }
   }
 }

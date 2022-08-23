@@ -4,6 +4,18 @@
       width: inherit !important;
     }
   }
+
+  &.is-style-full-height-content {
+    .wp-block-cover__inner-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+
+      .wp-block {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .container-fluid-with-padding {
