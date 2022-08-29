@@ -24,7 +24,7 @@ const action = () => {
         '.animate, ' +
         '.active-line, ' +
         '.is-style-stroke-style .line-left, ' +
-        '.is-style-stroke-style .line-right' +
+        '.is-style-stroke-style .line-right, ' +
         '.fadeIn:not(.line-animation)'
     );
     
