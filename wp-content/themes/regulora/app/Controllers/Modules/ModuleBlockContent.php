@@ -15,7 +15,7 @@ trait ModuleBlockContent
     /**
      * Class config
     */
-    public static $postsPerPage     = 3;
+    public static $postsPerPage     = 2;
     public static $showPagination   = false;
 
     // Block settings

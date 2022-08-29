@@ -39,9 +39,21 @@
 
 .faq {
   &.secondary {
+    .accordion-item {
+      background: transparent;
+    }
+
     .accordion-button {
       background-color: $secondary;
       color: $black;
+
+      &::after {
+        background-image: $accordion-button-icon-white;
+      }
+
+      &:not(.collapsed):after {
+        background-image: $accordion-button-active-icon-white;
+      }
     }
   }
 }
