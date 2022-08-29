@@ -95,6 +95,49 @@
   }
 }
 
+.wp-block-buttons {
+  &.is-style-tabs {
+    gap: 0;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    .wp-block-button {
+      flex-basis: 100%;
+
+      .wp-block-button__link {
+        background-color: $primary-light;
+        color: $black;
+        font-size: 36px;
+        padding: 15px 40px 15px 0;
+        opacity: .6;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 0;
+        display: block;
+        width: 100%;
+        text-align: left;
+
+        img {
+          width: 115px;
+          margin: -50px 0 -48px 0;
+        }
+
+        &.active,
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:first-child .wp-block-button__link {
+        border-radius: 50px 0 0 50px;
+      }
+
+      &:last-child .wp-block-button__link {
+        border-radius: 0 50px 50px 0;
+      }
+    }
+  }
+}
+
 @include media-breakpoint-between(lg, xl) {
   .wp-block-button {
     &.is-style-short {

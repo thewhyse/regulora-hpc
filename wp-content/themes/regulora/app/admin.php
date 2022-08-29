@@ -88,19 +88,19 @@ add_action('customize_preview_init', function () {
 /**
  * Add ACF-powered options page(s).
  */
-//if ( function_exists( 'acf_add_options_page' ) ) {
-//    acf_add_options_page( array(
-//        'page_title' => 'Theme General Settings',
-//        'menu_title' => 'Theme Settings',
-//        'menu_slug'  => 'theme-general-settings',
-//        'icon_url'   => 'dashicons-admin-customizer',
-//        'capability' => 'edit_posts',
-//
-//    ) );
-//
-//    acf_add_options_sub_page( array(
-//        'page_title'  => 'Theme General Settings',
-//        'menu_title'  => 'Theme Settings',
-//        'parent_slug' => 'theme-general-settings',
-//    ) );
-//}
+if ( function_exists( 'acf_add_options_page' ) ) {
+    acf_add_options_page( array(
+        'page_title' => 'Theme General Settings',
+        'menu_title' => 'Theme Settings',
+        'menu_slug'  => 'theme-general-settings',
+        'icon_url'   => 'dashicons-admin-customizer',
+        'capability' => 'edit_posts',
+
+    ) );
+
+    acf_add_options_sub_page( array(
+        'page_title'  => 'Theme General Settings',
+        'menu_title'  => 'Theme Settings',
+        'parent_slug' => 'theme-general-settings',
+    ) );
+}

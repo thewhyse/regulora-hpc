@@ -38,15 +38,18 @@ a.skip-main:active {
   }
 }
 
-header {
+header.banner {
+  box-shadow: 0 0 9px 0 $primary;
+
   .navbar {
-    margin-top: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
 
     // Site Logo
     .brand {
       img,
       svg {
-        height: 100px;
+        height: 110px;
         width: auto;
       }
     }
@@ -72,6 +75,7 @@ header {
         ul {
           display: flex;
           justify-content: space-between;
+          flex-wrap: nowrap;
           list-style: none;
           margin: 0;
           padding: 0;
@@ -79,15 +83,19 @@ header {
 
           li {
             position: relative;
+            flex-basis: 12%;
             z-index: 1;
+            display: flex;
+            align-items: center;
 
             a {
-              font-weight: 500;
+              font-weight: 600;
               color: $gray;
               font-size: 20px;
               display: flex;
               align-items: center;
-              justify-content: flex-end;
+              text-align: center;
+              //justify-content: flex-end;
 
               &:hover,
               &.active {
@@ -96,8 +104,11 @@ header {
             }
 
             &.current-menu-item {
+              border-bottom: 2px solid $primary;
+
               a {
                 color: $primary;
+                font-weight: 700;
               }
             }
           }

@@ -109,8 +109,16 @@
     background: $primary;
   }
 
+  &.primary-light {
+    background: $primary-light;
+  }
+
   &.secondary {
     background: $secondary;
+  }
+
+  &.transparent {
+    background: transparent;
   }
 
   &:not(.action) {

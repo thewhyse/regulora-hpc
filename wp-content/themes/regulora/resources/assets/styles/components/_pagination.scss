@@ -1,5 +1,5 @@
 .pagination {
-  margin: 40px 0 0;
+  margin: 60px 0 0;
   display: flex;
   justify-content: center;
 
@@ -24,9 +24,16 @@
     font-weight: 500;
     font-size: 22px;
     line-height: 22px;
+    letter-spacing: 1.65px;
+    text-decoration: underline;
 
     &.current {
-      color: $black;
+      color: $primary;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+      }
     }
 
     &:not(.dots):hover {

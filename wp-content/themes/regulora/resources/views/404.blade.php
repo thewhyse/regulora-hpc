@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
 
   @if ( ! have_posts() )
     @if ( $notFoundPage = \App\Controllers\App::themeOptions( '404page' ) )

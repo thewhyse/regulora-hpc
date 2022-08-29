@@ -39,35 +39,54 @@ const addLine = ( element ) => {
         spanLine.classList.add( 'blue-light' );
     if ( element.classList.contains( 'primary' ) )
         spanLine.classList.add( 'primary' );
+    if ( element.classList.contains( 'primary-light' ) )
+        spanLine.classList.add( 'primary-light' );
     if ( element.classList.contains( 'secondary' ) )
         spanLine.classList.add( 'secondary' );
+    if ( element.classList.contains( 'transparent' ) )
+        spanLine.classList.add( 'transparent' );
     
     // Get paragraph coords
     let coords = element.getBoundingClientRect();
     let offsets = cumulativeOffset( element );
+    let lineHeight = parseInt( window.getComputedStyle( element,null ).getPropertyValue('line-height') );
+    
+    if ( isNaN( lineHeight ) ) {
+        lineHeight = 20;
+    } else {
+        lineHeight = lineHeight / 2;
+    }
     if ( onTheLeft ) {
         spanLine.style.left = 0;
-        spanLine.style.right = ( offsets.left - 10 ) + 'px';
-        spanLine.style.top = ( offsets.top + 20 ) + 'px';
+        spanLine.style.right = ( window.innerWidth - offsets.left ) + 'px';
+        spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
     } else {
         spanLine.style.right = 0;
-        spanLine.style.left = ( offsets.left + coords.width + 10 ) + 'px';
-        spanLine.style.top = ( offsets.top + 20 ) + 'px';
+        spanLine.style.left = ( offsets.left + coords.width + 15 ) + 'px';
+        spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
     }
     document.body.appendChild( spanLine );
     
     // On window resize
     window.addEventListener( 'resize', function() {
+        lineHeight = parseInt( window.getComputedStyle( element,null ).getPropertyValue('line-height') );
+    
+        if ( isNaN( lineHeight ) ) {
+            lineHeight = 20;
+        } else {
+            lineHeight = lineHeight / 2;
+        }
+        
         coords = element.getBoundingClientRect();
         offsets = cumulativeOffset( element );
         if ( onTheLeft ) {
             spanLine.style.left = 0;
-            spanLine.style.right = ( offsets.left - 15 ) + 'px';
-            spanLine.style.top = ( offsets.top + 20 ) + 'px';
+            spanLine.style.right = ( window.innerWidth - offsets.left ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         } else {
             spanLine.style.right = 0;
             spanLine.style.left = ( offsets.left + coords.width + 15 ) + 'px';
-            spanLine.style.top = ( offsets.top + 20 ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         }
     } )
 };

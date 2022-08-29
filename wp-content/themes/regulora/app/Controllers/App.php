@@ -11,17 +11,20 @@ class App extends Controller
         Helpers\HelperSettings,
         Modules\ModuleBlockContent,
         Modules\ModuleFaq,
-        Modules\ModuleSlider
+        Modules\ModuleTestimonials,
+        Modules\ModuleTwitter
     {
         Helpers\HelperImages::traitSetup insteadof Helpers\HelperSettings;
         Helpers\HelperImages::traitSetup insteadof Modules\ModuleBlockContent;
         Helpers\HelperImages::traitSetup insteadof Modules\ModuleFaq;
-        Helpers\HelperImages::traitSetup insteadof Modules\ModuleSlider;
+        Helpers\HelperImages::traitSetup insteadof Modules\ModuleTestimonials;
+        Helpers\HelperImages::traitSetup insteadof Modules\ModuleTwitter;
         Helpers\HelperImages::traitSetup as traitSetupHI;
         Helpers\HelperSettings::traitSetup as traitSetupHS;
         Modules\ModuleBlockContent::traitSetup as traitSetupBC;
         Modules\ModuleFaq::traitSetup as traitSetupFAQ;
-        Modules\ModuleSlider::traitSetup as traitSetupSlider;
+        Modules\ModuleTestimonials::traitSetup as traitSetupTestimonials;
+        Modules\ModuleTwitter::traitSetup as traitSetupTwitter;
     }
 
     public static function setup()
@@ -31,7 +34,8 @@ class App extends Controller
         static::traitSetupHS();
         static::traitSetupBC();
         static::traitSetupFAQ();
-        static::traitSetupSlider();
+        static::traitSetupTestimonials();
+        static::traitSetupTwitter();
     }
 
     public function siteName()

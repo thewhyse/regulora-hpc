@@ -68,7 +68,7 @@ trait ModuleFaq
             $className .= ' align' . $block[ 'align' ];
         }
 
-        $time = time();
+        $time = $block[ 'id' ] . time();
 
         $faqData = get_field( static::$acfFAQ );
         ?>

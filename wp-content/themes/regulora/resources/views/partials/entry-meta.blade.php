@@ -4,4 +4,4 @@
     {{ get_the_author() }}
   </a>
 </p>
-<div class="mb-5"></div>
+<div class="mb-3"></div>

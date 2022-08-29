@@ -28,8 +28,20 @@
 
       p {
         font-weight: 500;
-        margin-bottom: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
+    }
+  }
+}
+
+.faq {
+  &.secondary {
+    .accordion-button {
+      background-color: $secondary;
+      color: $black;
     }
   }
 }

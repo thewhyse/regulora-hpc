@@ -12,12 +12,15 @@ wp.domReady(() => {
       label: 'With Lines',
     },
   ]);
+  
+  wp.blocks.registerBlockStyle('core/buttons', [
+    {
+      name: 'tabs',
+      label: 'Tabs',
+    },
+  ]);
 
   wp.blocks.registerBlockStyle('core/button', [
-    {
-      name: 'inactive',
-      label: 'Inactive',
-    },
     {
       name: 'simple-link',
       label: 'Simple Link',
@@ -121,6 +124,13 @@ wp.domReady(() => {
     {
       name: 'with-rounded-bg',
       label: 'With Pill BG',
+    },
+  ]);
+  
+  wp.blocks.registerBlockStyle('core/columns', [
+    {
+      name: 'steps',
+      label: 'Steps Style',
     },
   ]);
 });

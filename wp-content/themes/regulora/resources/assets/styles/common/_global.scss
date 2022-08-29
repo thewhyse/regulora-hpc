@@ -37,6 +37,10 @@ h2,
   line-height: 1.28;
   margin-bottom: 35px;
   font-weight: 700;
+
+  &.has-large-font-size {
+    font-size: 50px;
+  }
 }
 
 h3,
@@ -93,6 +97,10 @@ h6,
 
 .has-large-font-size {
   font-size: 34px;
+}
+
+.has-extra-large-font-size {
+  font-size: 48px;
 }
 
 ::marker {
@@ -157,7 +165,7 @@ a,
 
 .lines-v {
   position: relative;
-  padding-left: 45px;
+  padding-left: 45px !important;
 
   &::before {
     content: ' ';
@@ -172,10 +180,38 @@ a,
     left: 10px;
   }
 
+  &.white-lines {
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='124' viewBox='0 0 19 124'%3E%3Cg id='Double_Lines_2' data-name='Double Lines 2' transform='translate(2 2)'%3E%3Cline id='Line_362' data-name='Line 362' x1='90' transform='translate(15 30) rotate(90)' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-width='4'/%3E%3Cline id='Line_363' data-name='Line 363' x1='90' transform='rotate(90)' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-width='4'/%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+
   &.padding {
     &::before {
       content: '';
     }
+  }
+}
+
+.bg-line {
+  position: relative;
+
+  strong {
+    display: inline-block;
+    background: #fff;
+    padding: 0 50px;
+  }
+
+  &::before {
+    content: "";
+    height: 3px;
+    width: 100vw;
+    background: $secondary;
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    top: 50%;
+    z-index: -1;
   }
 }
 

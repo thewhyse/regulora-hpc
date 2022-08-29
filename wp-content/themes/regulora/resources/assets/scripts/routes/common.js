@@ -1,10 +1,12 @@
 /* eslint-disable */
 import {init as faqInit} from "../components/faq";
 import {init as contentBlock} from "../components/block-content";
-import {init as stepSlider} from "../components/step-slider";
+import {init as testimonialsSlider} from "../components/testimonials-slider";
+import {init as tweetsSlider} from "../components/tweets-slider";
 import {init as paragraphLineAnimation} from "../components/paragraph-line-animation";
 import {init as strokeLinesAnimation} from "../components/stroke-lines-animation";
 import {init as animationStart} from "../components/animate-by-viewport";
+import {init as tabs} from "../components/tabs";
 // import {ScrollSpy, Collapse} from "bootstrap";
 
 export default {
@@ -24,7 +26,9 @@ export default {
     // JavaScript to be fired on all pages, after page specific JS is fired
     faqInit();
     contentBlock();
-    stepSlider();
+    testimonialsSlider();
+    tweetsSlider();
+    tabs();
   
     const mobileMenu = document.getElementById( 'navPrimaryMenu' );
     const eyebrow = document.querySelector( '.eyebrow-section' );
@@ -60,6 +64,23 @@ export default {
         } )
       } )
     }
+  
+    window.addEventListener( 'scroll', function( e ) {
+      let goToTop = document.getElementById( 'back-to-top' );
+      if ( window.scrollY > ( window.innerHeight - window.innerHeight / 2 ) ) {
+        if ( ! goToTop.classList.contains( 'show' ) ) {
+          goToTop.classList.add( 'show' );
+        }
+      } else {
+        if ( goToTop.classList.contains( 'show' ) ) {
+          goToTop.classList.remove( 'show' );
+        }
+      }
+    } );
+    
+    document.getElementById( 'back-to-top' ).addEventListener( 'click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    } );
   
     paragraphLineAnimation();
     strokeLinesAnimation();

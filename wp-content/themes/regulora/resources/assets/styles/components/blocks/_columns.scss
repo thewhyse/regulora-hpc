@@ -2,6 +2,55 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  &.is-style-steps {
+    border-radius: 15px;
+    overflow: hidden;
+
+    .wp-block-column {
+      h5:first-child {
+        padding: 20px;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 70px;
+          height: 70px;
+          display: block;
+          border: 2px solid #fff;
+          border-radius: 8px;
+          transform: rotate(45deg);
+          position: absolute;
+          top: 0;
+          left: -45px;
+        }
+      }
+
+      & > .wp-block-group {
+        padding: 0 30px;
+        margin-top: 40px;
+        border-left: 2px solid $primary;
+        height: 80%;
+
+        .wp-block-group__inner-container {
+          height: 100%;
+        }
+      }
+
+      &:first-child {
+        h5:first-child {
+          &::before {
+            display: none;
+          }
+        }
+
+        & > .wp-block-group {
+          border-left: 2px solid transparent;
+        }
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(lg) {
