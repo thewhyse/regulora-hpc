@@ -44,6 +44,7 @@ header.banner {
   .navbar {
     padding-top: 0;
     padding-bottom: 0;
+    background: $white;
 
     // Site Logo
     .brand {
@@ -51,6 +52,7 @@ header.banner {
       svg {
         height: 110px;
         width: auto;
+        transition: all 0.3s ease-in-out;
       }
     }
 
@@ -88,6 +90,16 @@ header.banner {
             display: flex;
             align-items: center;
 
+            &::after {
+              content: "";
+              transition: all 0.3s ease-in-out;
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              right: 100%;
+              height: 2px;
+            }
+
             a {
               font-weight: 600;
               color: $gray;
@@ -95,11 +107,24 @@ header.banner {
               display: flex;
               align-items: center;
               text-align: center;
+              //transition: all 0.3s ease-in-out;
               //justify-content: flex-end;
 
-              &:hover,
               &.active {
                 color: $primary;
+              }
+            }
+
+            &:not(.current-menu-item):hover {
+              position: relative;
+
+              &::after {
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                right: 0;
+                height: 2px;
+                background: $primary;
               }
             }
 
@@ -116,11 +141,55 @@ header.banner {
       }
     }
   }
+
+  &.sticky-header {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background: #fff;
+
+    .eyebrow-section {
+      padding: 0;
+      height: 0;
+    }
+
+    .navbar {
+      .brand {
+        img,
+        svg {
+          height: 80px;
+        }
+      }
+    }
+
+    .nav-primary {
+      .menu-main-menu-container {
+        ul {
+          li {
+            a {
+              font-size: 17px;
+              padding: 5px 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    & + div {
+      margin-top: 179px;
+    }
+  }
 }
 
 .admin-bar {
-  header {
+  header.banner {
     top: 32px;
+    //
+    //&.sticky-header {
+    //  & + div {
+    //    margin-top: 179px;
+    //  }
+    //}
   }
 }
 

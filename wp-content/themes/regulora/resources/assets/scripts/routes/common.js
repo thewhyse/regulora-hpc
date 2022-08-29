@@ -67,6 +67,7 @@ export default {
   
     window.addEventListener( 'scroll', function( e ) {
       let goToTop = document.getElementById( 'back-to-top' );
+      let navBar = document.querySelector( 'header.banner' );
       if ( window.scrollY > ( window.innerHeight - window.innerHeight / 2 ) ) {
         if ( ! goToTop.classList.contains( 'show' ) ) {
           goToTop.classList.add( 'show' );
@@ -74,6 +75,16 @@ export default {
       } else {
         if ( goToTop.classList.contains( 'show' ) ) {
           goToTop.classList.remove( 'show' );
+        }
+      }
+  
+      if ( window.scrollY > 53 ) {
+        if ( ! navBar.classList.contains( 'sticky-header' ) ) {
+          navBar.classList.add( 'sticky-header' );
+        }
+      } else {
+        if ( navBar.classList.contains( 'sticky-header' ) ) {
+          navBar.classList.remove( 'sticky-header' );
         }
       }
     } );

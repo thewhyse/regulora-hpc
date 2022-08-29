@@ -1,6 +1,6 @@
 const elements = [];
 const offset = 250;
-const timeout = 1600;
+const timeout = 600;
 const initDelay = 800;
 
 const elementInViewport = (el, initial = false) => {
@@ -46,14 +46,15 @@ const addListener = () => {
 const observeElements = ( initial = false ) => {
     elements.forEach( element => {
         if ( elementInViewport( element, initial ) ) {
-            element.classList.add( 'action' );
-    
-            if ( typeof element.dataset.animateNext !== undefined ) {
+            if ( 'animateNext' in element.dataset ) {
                 let nextEl = document.getElementById( element.dataset.animateNext );
         
                 if ( nextEl ) {
-                    setTimeout( function() { nextEl.classList.add( 'action' ); }, timeout );
+                    nextEl.classList.add( 'action' );
+                    setTimeout( function() { element.classList.add( 'action' ); }, timeout );
                 }
+            } else {
+                element.classList.add( 'action' );
             }
         }
     } );
