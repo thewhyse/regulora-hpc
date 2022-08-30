@@ -10,6 +10,13 @@ body {
     height: 100vh;
     overflow: hidden;
   }
+
+  &.popup-show {
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
 }
 
 .container-fluid-with-padding {

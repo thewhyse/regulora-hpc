@@ -102,6 +102,25 @@ export default {
         }
       } )
     }
+    
+    const prof = document.getElementById( 'prof' );
+    if ( prof ) {
+      prof.addEventListener( 'click', function( e ) {
+        e.preventDefault();
+        let popupBlock = document.getElementById( 'choice-popup' );
+        popupBlock.classList.add( 'hide' );
+        document.body.classList.remove( 'popup-show' );
+        
+        setTimeout( function() {
+          popupBlock.remove();
+        }, 550 );
+        
+        let date = new Date();
+        date.setMonth(date.getMonth() + 6);
+        date = date.toUTCString();
+        document.cookie = "usertype=professional; expires=" + date;
+      } )
+    }
   
     paragraphLineAnimation();
     strokeLinesAnimation();

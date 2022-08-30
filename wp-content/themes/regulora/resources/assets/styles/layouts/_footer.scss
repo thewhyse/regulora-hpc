@@ -189,6 +189,69 @@ footer {
   }
 }
 
+#choice-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+
+  &.hide {
+    opacity: 0;
+  }
+
+  .inner {
+    max-width: 850px;
+    background: #fff;
+    padding: 50px 70px;
+    border-radius: 15px;
+
+    h2 {
+      text-align: center;
+      color: $primary;
+    }
+
+    p {
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        display: block;
+        text-align: center;
+        background: $primary;
+        border-radius: 50px;
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out;
+        max-width: 330px;
+        width: 100%;
+        padding: 20px 15px;
+        line-height: 1.2;
+        cursor: pointer;
+
+        &:hover {
+          background: $secondary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 1400px) and (max-width: 1585px) {
   footer {
     background-position: 120% 50%;

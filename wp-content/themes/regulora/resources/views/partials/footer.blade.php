@@ -46,3 +46,19 @@
     <span>Back to top</span><div class="icon"><?=\App\Controllers\App::svg( 'back-to-top' )?></div>
   </div>
 </footer>
+<?php if ( ! isset( $_COOKIE[ 'usertype' ] ) || $_COOKIE[ 'usertype' ] != 'professional' ) : ?>
+<div id="choice-popup" class="show">
+  <div class="inner">
+    <h2>ARE YOU A US HEALTHCARE PROFESSIONAL?</h2>
+    <p>The information provided in this website is<br/>intended for US healthcare professionals only</p>
+    <div class="buttons">
+      <a id="prof" class="make-choice">
+        I am a US<br/>healthcare professional
+      </a>
+      <a href="https://regulora.com" id="patient" class="make-choice">
+        Go to the<br/>patient website
+      </a>
+    </div>
+  </div>
+</div>
+<?php endif; ?>
