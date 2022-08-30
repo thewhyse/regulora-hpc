@@ -3,6 +3,21 @@
     margin-bottom: 0;
   }
 
+  &.with-stretched {
+    position: relative;
+
+    .wp-block-button__link {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
   &.is-style-steps {
     border-radius: 15px;
     overflow: hidden;

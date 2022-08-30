@@ -9,6 +9,18 @@
       text-decoration: none;
     }
 
+    &.has-primary-background-color {
+      &:hover {
+        background: $secondary !important;
+      }
+    }
+
+    &.has-secondary-background-color {
+      &:hover {
+        background: $primary !important;
+      }
+    }
+
     &.has-primary-color.has-secondary-background-color {
       &:hover {
         background: $primary;

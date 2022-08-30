@@ -92,6 +92,16 @@ export default {
     document.getElementById( 'back-to-top' ).addEventListener( 'click', function() {
       window.scrollTo({top: 0, behavior: 'smooth'});
     } );
+    
+    const subscribeForm = document.querySelector( '.wpcf7' );
+    if ( subscribeForm ) {
+      subscribeForm.addEventListener( 'wpcf7mailsent', function() {
+        let container = subscribeForm.closest( '.wp-block-cover__inner-container' );
+        if ( container ) {
+          container.innerHTML = "<h3 class='has-white-color text-center'>WELCOME TO THE REVOLUTION</h3><p class='has-white-color text-center'>Your registration is complete. Look for Regulora<sup>®</sup> news and updates soon.</p>"
+        }
+      } )
+    }
   
     paragraphLineAnimation();
     strokeLinesAnimation();

@@ -29,13 +29,19 @@ select {
   border: none;
   background-color: $white;
 
-  &:focus-visible {
-    outline: -webkit-focus-ring-color solid 3px;
-  }
+  //&:focus-visible {
+  //  outline: -webkit-focus-ring-color solid 3px;
+  //}
 
   &.wpcf7-not-valid {
     outline: red solid 2px;
   }
+}
+
+select {
+  background-image: $form-select-indicator !important;
+  background-position-x: 96% !important;
+  padding-right: 40px;
 }
 
 input[type=submit] {
@@ -151,13 +157,13 @@ input[type=checkbox] {
     .wpcf7-response-output {
       font-weight: 500;
       text-align: center;
-      margin: 0 0 50px;
-      color: $white;
+      margin: 15px 0 50px;
+      color: $yellow;
     }
   }
 
   .wpcf7-not-valid-tip {
-    color: $white;
+    color: $yellow;
     font-size: 18px;
   }
 
