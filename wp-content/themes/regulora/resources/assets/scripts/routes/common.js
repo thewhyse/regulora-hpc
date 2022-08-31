@@ -109,6 +109,7 @@ export default {
       
       if ( document.cookie.split(';').filter((item) => item.includes('usertype=professional')).length === 0) {
         popupBlock.classList.add( 'show' );
+        document.body.classList.add( 'popup-show' );
       }
       prof.addEventListener( 'click', function( e ) {
         e.preventDefault();
