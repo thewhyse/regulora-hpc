@@ -118,7 +118,7 @@ export default {
         let date = new Date();
         date.setMonth(date.getMonth() + 6);
         date = date.toUTCString();
-        document.cookie = "usertype=professional; expires=" + date;
+        document.cookie = "usertype=professional;path=/;expires=" + date;
       } )
     }
   
