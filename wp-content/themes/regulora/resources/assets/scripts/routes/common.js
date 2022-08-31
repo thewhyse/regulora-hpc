@@ -34,17 +34,17 @@ export default {
     const eyebrow = document.querySelector( '.eyebrow-section' );
     const header = document.getElementById( 'site-navbar' );
     
-    window.addEventListener( 'shown.bs.collapse', function() {
-      if ( window.innerWidth < 1200 ) {
-        let topHeight = eyebrow.offsetHeight + header.offsetHeight;
-        mobileMenu.style.height = ( window.innerHeight - topHeight ) + 'px';
-        document.querySelector( 'body' ).classList.add( 'menu-show' );
-      }
-    } );
-  
-    window.addEventListener( 'hidden.bs.collapse', function() {
-      document.querySelector( 'body' ).classList.remove( 'menu-show' );
-    } );
+    // window.addEventListener( 'shown.bs.collapse', function() {
+    //   if ( window.innerWidth < 1200 ) {
+    //     let topHeight = eyebrow.offsetHeight + header.offsetHeight;
+    //     mobileMenu.style.height = ( window.innerHeight - topHeight ) + 'px';
+    //     document.querySelector( 'body' ).classList.add( 'menu-show' );
+    //   }
+    // } );
+    //
+    // window.addEventListener( 'hidden.bs.collapse', function() {
+    //   document.querySelector( 'body' ).classList.remove( 'menu-show' );
+    // } );
     
     const readmore = document.querySelectorAll( '.readmore-hidden' );
     if ( readmore.length ) {

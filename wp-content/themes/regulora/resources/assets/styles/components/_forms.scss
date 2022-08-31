@@ -200,10 +200,11 @@ input[type=checkbox] {
   select,
   textarea {
     margin-bottom: 20px;
+    font-size: 19px;
+    padding: 9px 25px;
   }
 
   select {
-    padding: 16px 40px 16px 25px;
     background-position-x: 96%;
   }
 
@@ -211,7 +212,21 @@ input[type=checkbox] {
     padding: 10px;
     min-width: 250px;
     font-size: 20px;
-   }
+  }
+
+  .wpcf7-form .wpcf7-list-item {
+    .wpcf7-list-item-label {
+      font-size: 14px;
+    }
+
+    label {
+      align-items: start;
+
+      input[type=checkbox] {
+        margin-top: 6px;
+      }
+    }
+  }
 
   .wpcf7-form {
     &[data-status=sent],
@@ -220,5 +235,11 @@ input[type=checkbox] {
         padding: 20px 0;
       }
     }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  input[type=submit] {
+    min-width: 100%;
   }
 }

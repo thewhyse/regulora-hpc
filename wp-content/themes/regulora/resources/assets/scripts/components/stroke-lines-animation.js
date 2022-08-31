@@ -1,4 +1,4 @@
-const lines = document.querySelectorAll( '.is-style-stroke-style' );
+const lines = document.querySelectorAll( '.is-style-stroke-style, .like-stroke' );
 
 const processElements = () => {
     lines.forEach( element => {
@@ -29,7 +29,7 @@ const addLines = ( element ) => {
     let spanLineRight = document.createElement( 'span' );
     spanLineRight.classList.add( 'line-right' );
     
-    if ( targetLeft ) {
+    if ( targetLeft && window.innerWidth > 781 ) {
         spanLineLeft.style.left = ( targetLeft.left * -1 + 32 ) + 'px';
         spanLineLeft.style.right = ( targetLeft.left + coords.width + 32 ) + 'px';
         spanLineLeft.dataset.right = ( coords.width - 10 );
@@ -39,7 +39,7 @@ const addLines = ( element ) => {
         spanLineLeft.dataset.right = ( coords.width - 10 );
     }
     
-    if ( targetRight ) {
+    if ( targetRight && window.innerWidth > 781 ) {
         spanLineRight.style.left = ( coords.width - 10 ) + 'px';
         spanLineRight.style.right = '10px';
         spanLineRight.dataset.right = ( targetRight.left - coords.width - coords.left ) * -1 - 40;

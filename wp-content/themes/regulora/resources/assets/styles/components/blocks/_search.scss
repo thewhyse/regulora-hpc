@@ -93,16 +93,21 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
-  .searchform {
-    input {
-      opacity: 1;
-      border: 2px solid #ccc !important;
-      max-width: 100%;
-    }
+@include media-breakpoint-down(md) {
+  .wp-block-search {
+    &.wp-block-search__button-inside {
+      .wp-block-search__inside-wrapper {
+        max-width: 104px;
 
-    button {
-      padding: 0;
+        input {
+          &[type=search] {
+            padding: 2px 4px;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+          }
+        }
+      }
     }
   }
 }

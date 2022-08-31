@@ -9,7 +9,11 @@
     <nav id="site-navbar" class="navbar navbar-expand-xl">
       <a class="brand navbar-brand" href="{{ home_url('/') }}" aria-label="Site logo">{!! \App\Controllers\App::siteLogo() !!}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrimaryMenu" aria-controls="navPrimaryMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </button>
 
       <div class="collapse navbar-collapse nav-primary justify-content-end " id="navPrimaryMenu">

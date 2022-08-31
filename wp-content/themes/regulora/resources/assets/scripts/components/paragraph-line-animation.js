@@ -73,9 +73,14 @@ const addLine = ( element ) => {
     
         if ( isNaN( lineHeight ) ) {
             lineHeight = 20;
+            if ( window.innerWidth < 992 ) {
+                lineHeight = 35;
+            }
         } else {
             lineHeight = lineHeight / 2;
         }
+        
+        
         
         coords = element.getBoundingClientRect();
         offsets = cumulativeOffset( element );
@@ -93,7 +98,7 @@ const addLine = ( element ) => {
 
 const init = () => {
     if ( lines )
-        setTimeout( processElements, 500 );
+        setTimeout( processElements, 700 );
 };
 
 export { init };

@@ -84,6 +84,26 @@
         }
       }
     }
+
+    &.images-with-descr {
+      .wp-block-columns {
+        gap: 0;
+      }
+
+      .wp-block-image {
+        margin-bottom: 0;
+
+        img,
+        svg {
+          height: 160px !important;
+        }
+      }
+
+      p {
+        text-align: center !important;
+        margin-bottom: 0;
+      }
+    }
   }
 }
 

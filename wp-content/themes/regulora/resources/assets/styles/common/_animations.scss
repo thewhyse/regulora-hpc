@@ -147,3 +147,9 @@
     opacity: 1 !important;
   }
 }
+
+@include media-breakpoint-down(lg) {
+  .active-line {
+    height: 3px;
+  }
+}

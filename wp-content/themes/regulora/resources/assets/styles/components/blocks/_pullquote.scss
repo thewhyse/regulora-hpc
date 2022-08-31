@@ -81,3 +81,31 @@
     }
   }
 }
+
+@include media-breakpoint-down(lg) {
+  .wp-block-pullquote {
+    padding: 35px var(--bs-gutter-x, 0.75rem);
+    text-align: left;
+    margin-bottom: 0;
+
+    blockquote {
+      p {
+        font-size: 32px;
+      }
+    }
+
+    &.is-style-with-lines {
+      &.animate {
+        &.action {
+          &::before {
+            right: 30vw;
+          }
+
+          &::after {
+            left: 30vw;
+          }
+        }
+      }
+    }
+  }
+}

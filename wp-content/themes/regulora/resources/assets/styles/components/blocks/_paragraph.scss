@@ -37,6 +37,39 @@ p {
     }
   }
 
+  &.like-stroke {
+    display: inline;
+    margin: 10px 0;
+    position: relative;
+    line-height: 1;
+
+    span.line-left {
+      height: 3px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 23px;
+      right: 100%;
+      background: $secondary;
+      border-radius: 0 10px 10px 0;
+      z-index: -1;
+      transition: right 1s ease-in-out;
+    }
+
+    span.line-right {
+      height: 3px;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 18px;
+      left: 100%;
+      background: $secondary;
+      border-radius: 10px 0 0 10px;
+      z-index: -1;
+      transition: right 1s ease-in-out;
+    }
+  }
+
   &.is-style-border-bottom {
     border-bottom: 2px solid;
     padding: 0 0 10px;

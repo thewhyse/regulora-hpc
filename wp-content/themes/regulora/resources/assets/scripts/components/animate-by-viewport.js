@@ -25,6 +25,8 @@ const action = () => {
         '.active-line, ' +
         '.is-style-stroke-style .line-left, ' +
         '.is-style-stroke-style .line-right, ' +
+        '.like-stroke .line-left, ' +
+        '.like-stroke .line-right, ' +
         '.fadeIn:not(.line-animation)'
     );
     
