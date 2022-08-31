@@ -16,7 +16,8 @@ const cumulativeOffset = (element) => {
 
 const processElements = () => {
     lines.forEach( element => {
-        addLine( element );
+        if ( element.offsetWidth )
+            addLine( element );
     } );
 };
 

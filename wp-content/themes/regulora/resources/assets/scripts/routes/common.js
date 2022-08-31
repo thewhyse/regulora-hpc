@@ -105,9 +105,13 @@ export default {
     
     const prof = document.getElementById( 'prof' );
     if ( prof ) {
+      let popupBlock = document.getElementById( 'choice-popup' );
+      
+      if ( document.cookie.split(';').filter((item) => item.includes('usertype=professional')).length === 0) {
+        popupBlock.classList.add( 'show' );
+      }
       prof.addEventListener( 'click', function( e ) {
         e.preventDefault();
-        let popupBlock = document.getElementById( 'choice-popup' );
         popupBlock.classList.add( 'hide' );
         document.body.classList.remove( 'popup-show' );
         
