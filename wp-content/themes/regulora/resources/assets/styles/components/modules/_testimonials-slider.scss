@@ -3,6 +3,10 @@
     .slider-container {
       padding: 25px 0;
 
+      .tns-outer {
+        max-width: 100%;
+      }
+
       .slider-inner {
         max-width: 1000px;
         margin: 0 auto;
@@ -186,6 +190,95 @@
 
           .tns-nav {
             margin-top: 70px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .testimonialSlider {
+    .wp-block-testimonials-slider {
+      .slider-container {
+        padding: 25px 0;
+
+        .slider-inner {
+          width: 100%;
+          flex-direction: column;
+
+          .prev-but-place {
+            width: 27px;
+            margin-right: 20px;
+
+            svg {
+              width: 27px;
+              margin-top: 0;
+            }
+          }
+
+          .next-but-place {
+            width: 27px;
+            margin-left: 20px;
+
+            svg {
+              width: 27px;
+              margin-top: 0;
+            }
+          }
+
+          .slide-item {
+            padding: 20px 15px 50px;
+            font-size: 26px !important;
+
+            .slide-content {
+              padding-top: 55px;
+
+              svg.quote {
+                top: -55px;
+                width: 50px;
+              }
+            }
+          }
+
+          .tns-nav {
+            margin-top: 40px;
+            margin-bottom: 40px;
+          }
+        }
+      }
+
+      // default view
+      &.view-default {
+        .slider-container {
+          .slider-inner {
+            width: 100%;
+            flex-direction: column;
+
+            .slide-item {
+              padding: 20px 15px 50px;
+              font-size: 22px !important;
+
+              .slide-content {
+                padding-top: 55px;
+
+                svg.quote {
+                  top: -55px;
+                  width: 50px;
+                }
+              }
+
+              .pdfLink {
+                padding: 5px 15px;
+                bottom: -25px;
+                margin-left: -136px;
+              }
+            }
+
+            .tns-nav {
+              margin-top: 50px;
+              margin-bottom: 50px;
+            }
           }
         }
       }

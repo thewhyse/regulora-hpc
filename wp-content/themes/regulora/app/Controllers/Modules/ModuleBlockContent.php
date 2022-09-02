@@ -65,6 +65,7 @@ trait ModuleBlockContent
                 'title'             => __( 'Query Content' ),
                 'description'       => __( 'Show block with posts of custom query options' ),
                 'keywords'          => array( 'query', 'content', 'custom' ),
+                'mode'              => 'edit',
                 'icon'              => '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="th-large" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-th-large fa-w-16 fa-2x"><path fill="currentColor" d="M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z" class=""></path></svg>',
                 'align'             => 'full',
                 'render_callback'   => [ static::class, 'renderBlock' ],
@@ -260,10 +261,10 @@ trait ModuleBlockContent
         $post = get_post( $postID );
         // Get our blocks from the post content of the post we're interested in
         $post_blocks = parse_blocks( $post->post_content );
-
+//print_r($post_blocks);
         // Loop through all the blocks
         foreach ( $post_blocks as $block ) {
-
+//var_dump($block['attrs']['data']);
             // Only look at the block if it matches the $block_id
             if ( isset( $block['attrs']['id'] ) && $blockID == $block['attrs']['id'] ) {
                 if ( isset( $block['attrs']['data'][$field_name] ) ) {
@@ -289,6 +290,17 @@ trait ModuleBlockContent
                                     return $blockInnerS['attrs']['data'][$field_name];
                                 } else {
                                     break;  // If we found our block but didn't find the selector, abort the loop
+                                }
+                            } else if ( ! empty( $blockInnerS['innerBlocks'] ) ) {
+                                foreach ( $blockInnerS['innerBlocks'] as $blockInnerS1 ) {
+                                    // Only look at the block if it matches the $block_id
+                                    if ( isset( $blockInnerS1['attrs']['id'] ) && $blockID == $blockInnerS1['attrs']['id'] ) {
+                                        if ( isset( $blockInnerS1['attrs']['data'][$field_name] ) ) {
+                                            return $blockInnerS1['attrs']['data'][$field_name];
+                                        } else {
+                                            break;  // If we found our block but didn't find the selector, abort the loop
+                                        }
+                                    }
                                 }
                             }
                         }

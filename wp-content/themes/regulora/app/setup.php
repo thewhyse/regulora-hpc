@@ -403,7 +403,7 @@ add_action( 'acf/input/admin_footer', function () {
           <script>
           (function($) {
             acf.add_filter("color_picker_args", function( args, $field ){
-                args.palettes = [ ' . COLOR_PRIMARY . ', ' . COLOR_SECONDARY . ', ' . COLOR_GRAY . ', ' . COLOR_BLACK . ' ]
+                args.palettes = [ "' . COLOR_PRIMARY . '", "' . COLOR_SECONDARY . '", "' . COLOR_GRAY . '", "' . COLOR_BLACK . '" ]
                 return args;
 
             });
@@ -419,7 +419,7 @@ add_action( 'pre_get_posts', function ( $q )
 {
     if( !is_admin()
         && $q->is_main_query()
-        && ( is_category() || is_search() )
+        && ( is_category() || is_search() || is_page() )
     ) {
         $q->set( 'posts_per_page', 1 );
     }

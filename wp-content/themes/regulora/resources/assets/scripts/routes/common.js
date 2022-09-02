@@ -26,8 +26,6 @@ export default {
     // JavaScript to be fired on all pages, after page specific JS is fired
     faqInit();
     contentBlock();
-    testimonialsSlider();
-    tweetsSlider();
     tabs();
   
     const mobileMenu = document.getElementById( 'navPrimaryMenu' );
@@ -127,6 +125,9 @@ export default {
       } )
     }
   
+  
+    testimonialsSlider();
+    tweetsSlider();
     paragraphLineAnimation();
     strokeLinesAnimation();
     animationStart();

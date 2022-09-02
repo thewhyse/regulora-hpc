@@ -13,15 +13,17 @@
     position: relative;
 
     &::before {
-      left: 20px;
-      right: 38%;
+      left: 0;
+      right: 60%;
       border-radius: 10px;
+      background: $secondary;
     }
 
     &::after {
-      right: 20px;
-      left: 38%;
+      right: 0;
+      left: 60%;
       border-radius: 10px;
+      background: $secondary;
     }
 
     &.animate {
@@ -40,11 +42,11 @@
         opacity: 1;
 
         &::before {
-          right: 38%;
+          right: 60%;
         }
 
         &::after {
-          left: 38%;
+          left: 60%;
         }
       }
     }

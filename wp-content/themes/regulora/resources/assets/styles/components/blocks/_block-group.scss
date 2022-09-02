@@ -69,15 +69,23 @@
         overflow: visible !important;
       }
     }
+
+    &.tab-content {
+      display: block;
+
+      &.active {
+        display: block;
+      }
+    }
   }
 }
 
 @include media-breakpoint-down(lg) {
   .wp-block-group {
-    &.alignfull:not(.p-0) {
-      padding: var(--spacer-110) 0 !important;
-    }
-
+    //&.alignfull:not(.p-0) {
+    //  padding: var(--spacer-110) 0 !important;
+    //}
+    //
     &.is-style-faq-item {
       padding: 22px 25px 22px 25px;
 

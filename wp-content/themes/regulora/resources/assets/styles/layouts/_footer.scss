@@ -358,6 +358,22 @@ footer {
       }
     }
   }
+
+  #choice-popup {
+    .inner {
+      width: 90%;
+      padding: 40px 20px;
+
+      .buttons {
+        flex-direction: column;
+        gap: 30px;
+
+        a {
+          font-size: 19px;
+        }
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(md) {

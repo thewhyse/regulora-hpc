@@ -4,12 +4,14 @@ const sliders = [];
 const blocks = document.querySelectorAll( '.wp-block-testimonials-slider' );
 
 const sliderInit = ( block ) => {
+    let prevBut = window.innerWidth >= 992 ? '.prev-but-place.desktop' : '.prev-but-place.mobile';
+    let nextBut = window.innerWidth >= 992 ? '.next-but-place.desktop' : '.next-but-place.mobile';
     let options = {
-        container: '.testimonials-slider',
+        container: block.querySelector( '.testimonials-slider' ),
         items: 1,
         controls: true,
-        prevButton: block.querySelector( '.prev-but-place' ),
-        nextButton: block.querySelector( '.next-but-place' ),
+        prevButton: block.querySelector( prevBut ),
+        nextButton: block.querySelector( nextBut ),
         // controlsContainer         : containerId + ' ' + sliderArrowsContainer,
         controlsPosition: 'bottom',
         nav: true,
