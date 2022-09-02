@@ -18,32 +18,36 @@
       "src": "/"
     },
     {
-      "key": "category",
-      "src": "/category/media/"
+      "key": "page",
+      "src": "/about-regulora/"
+    },
+    {
+      "key": "about-regulora",
+      "src": "/about-regulora/"
+    },
+    {
+      "key": "about-gdh",
+      "src": "/about-gdh/"
+    },
+    {
+      "key": "educating-patients",
+      "src": "/educating-patients/"
+    },
+    {
+      "key": "prescribing-regulora",
+      "src": "/prescribing-regulora/"
+    },
+    {
+      "key": "resources",
+      "src": "/resources/"
+    },
+    {
+      "key": "reviews-and-news",
+      "src": "/reviews-and-news/"
     },
     {
       "key": "single-news",
-      "src": "/digital-therapeutics-what-are-they-and-where-do-they-fit-in-pharmacy-and-medical-benefits/"
-    },
-    {
-      "key": "page",
-      "src": "/privacy-policy/"
-    },
-    {
-      "key": "pipeline",
-      "src": "/pipeline/"
-    },
-    {
-      "key": "news-and-media",
-      "src": "/news-and-media/"
-    },
-    {
-      "key": "about-us",
-      "src": "/about-us/"
-    },
-    {
-      "key": "contact-us",
-      "src": "/contact-us/"
+      "src": "/lorem-ipsum-2/"
     }
   ],
   "watch": [
