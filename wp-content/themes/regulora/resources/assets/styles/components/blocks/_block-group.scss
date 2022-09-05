@@ -10,6 +10,16 @@
       flex-direction: column;
       flex-basis: 100%;
       justify-content: space-between;
+
+      .wp-block-buttons {
+        .wp-block-button {
+          &.w-100 {
+            width: calc(100% - 20px) !important;
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
+      }
     }
   }
 

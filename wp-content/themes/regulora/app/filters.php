@@ -130,6 +130,19 @@ add_filter( 'acf/settings/load_json', function ( $paths ) {
 } );
 
 /**
+ * ACF wysiwyg additional buttons
+ */
+add_filter( 'acf/fields/wysiwyg/toolbars' , function( $toolbars )
+{
+    //INJECT/ADD AN OPTION INTO THE BASIC TOOLBAR
+    $toolbars['Basic' ][1] = array_merge( array_slice( $toolbars['Basic' ][1], 0, 3, true ), array( 'subscript','superscript' ), array_slice( $toolbars['Basic' ][1], 3, null, true ) );
+
+    $toolbars['Full' ][1] = array_merge( array_slice( $toolbars['Full' ][1], 0, 3, true ), array( 'subscript','superscript' ), array_slice( $toolbars['Full' ][1], 3, null, true ) );
+
+    return $toolbars;
+}  );
+
+/**
  * MIME SVG add
  * Allow .vcf files to upload to the media library
  */

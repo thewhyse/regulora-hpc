@@ -139,6 +139,11 @@
     // default view
     &.view-default {
       .slider-container {
+        .tns-outer {
+          max-width: 672px;
+          width: 100%;
+        }
+
         .slider-inner {
           max-width: 820px;
 

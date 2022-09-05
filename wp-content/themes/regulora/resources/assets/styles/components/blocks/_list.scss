@@ -31,7 +31,13 @@ ul {
   li {
     &::marker {
       color: $black;
-      font-weight: 500;
+      font-weight: 700;
+    }
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

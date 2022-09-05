@@ -19,7 +19,7 @@ const sliderInit = ( block ) => {
         autoplay: false,
         autoplayButton: false,
         autoplayButtonOutput: false,
-        loop: false,
+        loop: true,
         lazyload: true,
         autoplayTimeout: 6000,
         mouseDrag: true,

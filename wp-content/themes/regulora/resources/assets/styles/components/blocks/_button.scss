@@ -12,12 +12,14 @@
     &.has-primary-background-color {
       &:hover {
         background: $secondary !important;
+        color: $black !important;
       }
     }
 
     &.has-secondary-background-color {
       &:hover {
         background: $primary !important;
+        color: $white !important;
       }
     }
 
