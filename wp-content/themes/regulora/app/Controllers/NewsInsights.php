@@ -12,6 +12,8 @@ class NewsInsights extends Controller
     public static $acfRelatedNews       = "related_news_insights";
     public static $acfRelatedAttorneys  = "key_contacts";
     public static $acfAlternateFeatured = "alternate_featured_image";
+    public static $acfAlternateTitle    = "alternate_title";
+    public static $acfAlternateLink     = "alternate_link";
 
     public static $postsPerPage = 9;
 
@@ -92,15 +94,18 @@ class NewsInsights extends Controller
         $imageX2 = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
         $categories = wp_get_post_terms( $post->ID, array( 'category' ));
 
+        $alternateTitle = get_field( static::$acfAlternateTitle, $post->ID );
+        $alternateLink = get_field( static::$acfAlternateLink, $post->ID );
+
         return [
             'id' => $post->ID,
             'image' => !empty($image) ? reset( $image ) : get_theme_mod( 'placeholder_image' ),
             'imageX2' => !empty($imageX2) ? reset( $imageX2 ) : get_theme_mod( 'placeholder_image' ),
-            'title' => get_the_title( $post->ID ),
+            'title' => $alternateTitle ? $alternateTitle : get_the_title( $post->ID ),
             'excerpt' => get_the_excerpt( $post->ID ),
             'terms' => ( !empty( $categories ) ) ? $categories[0] : '',
             'type' => get_post_type( $post->ID ),
-            'url' => get_permalink( $post->ID ),
+            'url' => $alternateLink ? $alternateLink : get_permalink( $post->ID ),
             'authorId' => $post->post_author,
             'date' => get_the_date( 'F j, Y', $post->ID ),
         ];

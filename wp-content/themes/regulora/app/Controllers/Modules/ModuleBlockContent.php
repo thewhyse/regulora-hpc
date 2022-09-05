@@ -178,7 +178,7 @@ trait ModuleBlockContent
                                         <?= $post[ 'excerpt' ] ?>
                                     </div>
                                 <?php endif; ?>
-                                <a href="<?= $post[ 'url' ] ?>" class="read-more-link">
+                                <a href="<?= $post[ 'url' ] ?>" target="_blank" class="read-more-link">
                                     Read more <span class="visually-hidden"> about <?= $post[ 'title' ] ?></span>
                                 </a>
                             </div>
@@ -237,7 +237,7 @@ trait ModuleBlockContent
                                     <?= $post[ 'excerpt' ] ?>
                                 </div>
                             <?php endif; ?>
-                            <a href="<?= $post[ 'url' ] ?>" class="read-more-link">
+                            <a href="<?= $post[ 'url' ] ?>" target="_blank" class="read-more-link">
                                 Read more <span class="visually-hidden"> about <?= $post[ 'title' ] ?></span>
                             </a>
                         </div>
