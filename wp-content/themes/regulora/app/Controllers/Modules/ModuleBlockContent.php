@@ -179,7 +179,7 @@ trait ModuleBlockContent
                                     </div>
                                 <?php endif; ?>
                                 <a href="<?= $post[ 'url' ] ?>" target="_blank" class="read-more-link">
-                                    Read more <span class="visually-hidden"> about <?= $post[ 'title' ] ?></span>
+                                    <?=( $post['alternateLinkCTA'] ? $post['alternateLinkCTA'] : 'Read more' )?> <span class="visually-hidden"> about <?= $post[ 'title' ] ?></span>
                                 </a>
                             </div>
                         <?php endforeach; ?>
@@ -238,7 +238,7 @@ trait ModuleBlockContent
                                 </div>
                             <?php endif; ?>
                             <a href="<?= $post[ 'url' ] ?>" target="_blank" class="read-more-link">
-                                Read more <span class="visually-hidden"> about <?= $post[ 'title' ] ?></span>
+                                <?=( $post['alternateLinkCTA'] ? $post['alternateLinkCTA'] : 'Read more' )?> <span class="visually-hidden"> about <?= $post[ 'title' ] ?></span>
                             </a>
                         </div>
                     <?php endforeach; ?>

@@ -14,6 +14,7 @@ class NewsInsights extends Controller
     public static $acfAlternateFeatured = "alternate_featured_image";
     public static $acfAlternateTitle    = "alternate_title";
     public static $acfAlternateLink     = "alternate_link";
+    public static $acfAlternateLinkCTA  = "alternate_link_cta";
 
     public static $postsPerPage = 9;
 
@@ -96,6 +97,7 @@ class NewsInsights extends Controller
 
         $alternateTitle = get_field( static::$acfAlternateTitle, $post->ID );
         $alternateLink = get_field( static::$acfAlternateLink, $post->ID );
+        $alternateLinkCTA = get_field( static::$acfAlternateLinkCTA, $post->ID );
 
         return [
             'id' => $post->ID,
@@ -106,6 +108,7 @@ class NewsInsights extends Controller
             'terms' => ( !empty( $categories ) ) ? $categories[0] : '',
             'type' => get_post_type( $post->ID ),
             'url' => $alternateLink ? $alternateLink : get_permalink( $post->ID ),
+            'alternateLinkCTA' => $alternateLinkCTA,
             'authorId' => $post->post_author,
             'date' => get_the_date( 'F j, Y', $post->ID ),
         ];

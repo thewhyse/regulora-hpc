@@ -36,6 +36,25 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_63163685e819e",
+            "label": "Alternate Link CTA",
+            "name": "alternate_link_cta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -56,5 +75,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662399340
+    "modified": 1662400157
 }
