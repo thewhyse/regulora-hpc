@@ -175,10 +175,12 @@ add_filter( 'get_the_excerpt', function( $excerpt, $post ) {
             if ( in_array( substr( $return, -1 ), array( '.', ',', ':', ';' ) ) ) {
                 $return = substr( $return, 0, strlen( $return ) - 1 );
             }
-            return '<p>' . $return . '...</p>';
+            $dots = ( substr( $return, -1, 1 ) != '.' ) ? '...' : '';
+            return '<p>' . $return . $dots . '</p>';
         }
     }
-    return "<p>$excerpt...</p>";
+    $dots = ( substr( $excerpt, -1, 1 ) != '.' ) ? '...' : '';
+    return "<p>{$excerpt}{$dots}</p>";
 }, 25, 2 );
 
 /**
