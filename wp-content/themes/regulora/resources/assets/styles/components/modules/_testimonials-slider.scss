@@ -199,6 +199,28 @@
         }
       }
     }
+
+    &.view-head {
+      .slider-container {
+        .slider-inner {
+          .testimonials-slider {
+            display: flex;
+            align-items: center;
+            background: transparent;
+          }
+
+          .slide-item {
+            opacity: 0;
+            background: $white;
+            border-radius: 25px;
+
+            &.tns-slide-active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
