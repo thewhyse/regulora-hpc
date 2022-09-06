@@ -226,6 +226,21 @@ a,
   }
 }
 
+.vidyard-player-container {
+  max-width: 1024px;
+  margin: 0 auto 1em;
+
+  & > div {
+    padding-bottom: 50% !important;
+
+    img {
+      &.vidyard-player-embed {
+        width: auto !important;
+      }
+    }
+  }
+}
+
 @include media-breakpoint-down(lg) {
   html {
     margin-top: 0 !important;

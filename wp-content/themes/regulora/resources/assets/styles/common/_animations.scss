@@ -99,7 +99,7 @@
   height: 5px;
   position: absolute;
   background: $blue;
-  transition: all 1.5s ease-in-out;
+  transition: left 1.5s ease-in-out, right 1.5s ease-in-out;
 
   &.blue-light {
     background: $blue-light;
@@ -121,6 +121,14 @@
     background: transparent;
   }
 
+  &.on-the-left {
+    border-radius: 0 15px 15px 0;
+  }
+
+  &.on-the-right {
+    border-radius: 15px 0 0 15px;
+  }
+
   &:not(.action) {
     &.on-the-left {
       right: 100vw !important;
@@ -128,6 +136,21 @@
 
     &.on-the-right {
       left: 100vw !important;
+    }
+  }
+}
+
+.infographic {
+  .connection-line {
+    background: $secondary;
+    position: absolute;
+
+    &.horizontal {
+      height: 3px;
+    }
+
+    &.vertical {
+      width: 3px;
     }
   }
 }

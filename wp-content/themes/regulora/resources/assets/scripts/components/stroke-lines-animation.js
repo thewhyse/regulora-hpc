@@ -1,9 +1,159 @@
 const lines = document.querySelectorAll( '.is-style-stroke-style, .like-stroke' );
 
+const cumulativeOffset = (element) => {
+    var top = 0, left = 0;
+    do {
+        top += element.offsetTop  || 0;
+        left += element.offsetLeft || 0;
+        element = element.offsetParent;
+    } while(element);
+    
+    return {
+        top: top,
+        left: left,
+    };
+};
+
 const processElements = () => {
     lines.forEach( element => {
-        addLines( element );
+        if ( ! element.closest( '.infographic' ) ) {
+            addLines( element );
+        }
     } );
+    
+    createInfographic();
+};
+
+// line-top
+const createInfographic = () => {
+    const infographics = document.querySelectorAll( '.infographic' );
+    const lineHeight = 97;
+    
+    if ( infographics ) {
+        infographics.forEach( infographic => {
+            let vw = document.body.offsetWidth;
+            let vh = document.body.offsetHeight;
+            let bcc = cumulativeOffset( infographic );
+            let bcr = infographic.getBoundingClientRect();
+            let blockCoords = {
+                top: bcc.top,
+                left: bcc.left,
+                right: bcc.left + bcr.width,
+                bottom: bcc.top + bcr.height,
+            };
+            let infoItems = infographic.querySelectorAll( '.anchor-target' );
+            
+            if ( infoItems ) {
+                let tempCoords = {
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                };
+                infoItems.forEach( ( infoItem, index ) => {
+                    let coords = infoItem.getBoundingClientRect();
+                    let coordsCum = cumulativeOffset( infoItem );
+                    let topDiff = tempCoords.top - coordsCum.top;
+                    let lineDirection;
+    
+                    infoItem.dataset.step = index;
+                    
+                    if ( index === 0 ) {
+                        tempCoords.top = coordsCum.top;
+                        tempCoords.left = coords.x;
+                        tempCoords.right = coords.x + coords.width;
+                        tempCoords.lineDirection = '';
+                        return;
+                    }
+    
+                    console.log(tempCoords.right + ' = ' + coords.x);
+                    console.log('topDiff = ' + topDiff);
+                    if ( tempCoords.right < coords.x ) {
+                        if ( topDiff < 100 && topDiff > -100 ) {
+                            lineDirection = 'right-left';
+                        } else {
+                            if ( tempCoords.lineDirection === 'right-right-v' )
+                                lineDirection = 'left-left-v';
+                            else
+                                lineDirection = 'right-right-v';
+                        }
+                    } else {
+                        if ( topDiff < 100 && topDiff > -100 ) {
+                            lineDirection = 'left-right';
+                        } else {
+                            if ( tempCoords.lineDirection === 'right-right-v' )
+                                lineDirection = 'left-left-v';
+                            else
+                                lineDirection = 'right-right-v';
+                        }
+                    }
+                    tempCoords.lineDirection = lineDirection;
+                        console.log(lineDirection);
+                    let line, lineV, lineEnd;
+                    
+                    switch ( lineDirection ) {
+                        case 'right-left' :
+                            line = document.createElement( 'div' );
+                            line.classList.add( 'connection-line' );
+                            
+                            line.classList.add( 'horizontal' );
+                            line.classList.add( 'right-left' );
+                            line.style.left = tempCoords.right + 'px';
+                            line.style.right = ( vw - coords.x ) + 'px'; // -> tempCoords.left + 'px';
+                            line.style.top = ( tempCoords.top + lineHeight - 40 ) + 'px';
+                            
+                            line.dataset.right = ( vw - coords.x ) + 'px';
+                            infographic.appendChild( line );
+                            break;
+                        case 'right-right-v' :
+                            line = document.createElement( 'div' );
+                            lineV = document.createElement( 'div' );
+                            lineEnd = document.createElement( 'div' );
+                            line.classList.add( 'connection-line' );
+                            lineV.classList.add( 'connection-line' );
+                            lineEnd.classList.add( 'connection-line' );
+    
+                            line.classList.add( 'horizontal' );
+                            line.classList.add( 'right-left' );
+                            lineV.classList.add( 'vertical' );
+                            lineV.classList.add( 'top-bottom' );
+                            lineEnd.classList.add( 'horizontal' );
+                            lineEnd.classList.add( 'left-right' );
+                            
+                            line.style.left = tempCoords.right + 'px';
+                            line.style.right = ( vw - blockCoords.right ) + 'px';// -> tempCoords.left + 'px';
+                            line.style.top = ( tempCoords.top + lineHeight - 40 ) + 'px';
+    
+                            // lineV.style.left = ( blockCoords.right - 3 ) + 'px';
+                            lineV.style.right = ( vw - blockCoords.right ) + 'px';
+                            lineV.style.top = ( tempCoords.top + lineHeight - 40 ) + 'px';
+                            lineV.style.bottom = ( vh - coordsCum.top - lineHeight + 40 ) + 'px';
+    
+                            lineEnd.style.right = ( vw - blockCoords.right ) + 'px';
+                            lineEnd.style.top = ( coordsCum.top + lineHeight - 40 ) + 'px';
+                            lineEnd.style.left = ( coords.x + coords.width ) + 'px';// -> blockCoords.right + 'px';
+    
+                            line.dataset.right = ( vw - blockCoords.right ) + 'px';
+                            lineV.dataset.bottom = ( vh - coordsCum.top - lineHeight + 40 ) + 'px';
+                            lineEnd.dataset.left = ( coords.x + coords.width ) + 'px';
+                            infographic.appendChild( line );
+                            infographic.appendChild( lineV );
+                            infographic.appendChild( lineEnd );
+                            break;
+                        case 'left-right' :
+        
+                            break;
+                        case 'left-left-v' :
+        
+                            break;
+                    }
+    
+                    tempCoords.top = coordsCum.top;
+                    tempCoords.left = coords.x;
+                    tempCoords.right = coords.x + coords.width;
+                } )
+            }
+        } )
+    }
 };
 
 const addLines = ( element ) => {

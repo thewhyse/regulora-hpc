@@ -54,6 +54,9 @@ const addLine = ( element ) => {
     
     if ( isNaN( lineHeight ) ) {
         lineHeight = 20;
+        if ( window.innerWidth < 992 ) {
+            lineHeight = 35;
+        }
     } else {
         lineHeight = lineHeight / 2;
     }
@@ -72,6 +75,33 @@ const addLine = ( element ) => {
     window.addEventListener( 'resize', function() {
         lineHeight = parseInt( window.getComputedStyle( element,null ).getPropertyValue('line-height') );
     
+        if ( isNaN( lineHeight ) ) {
+            lineHeight = 20;
+            if ( window.innerWidth < 992 ) {
+                lineHeight = 35;
+            }
+        } else {
+            lineHeight = lineHeight / 2;
+        }
+        
+        
+        
+        coords = element.getBoundingClientRect();
+        offsets = cumulativeOffset( element );
+        if ( onTheLeft ) {
+            spanLine.style.left = 0;
+            spanLine.style.right = ( window.innerWidth - offsets.left ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
+        } else {
+            spanLine.style.right = 0;
+            spanLine.style.left = ( offsets.left + coords.width + 15 ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
+        }
+    } )
+    
+    window.addEventListener( 'scroll', function() {
+        lineHeight = parseInt( window.getComputedStyle( element,null ).getPropertyValue('line-height') );
+        
         if ( isNaN( lineHeight ) ) {
             lineHeight = 20;
             if ( window.innerWidth < 992 ) {
