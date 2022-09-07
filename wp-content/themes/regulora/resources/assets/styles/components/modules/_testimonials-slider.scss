@@ -147,6 +147,11 @@
         .slider-inner {
           max-width: 820px;
 
+          .testimonials-slider {
+            display: flex;
+            align-items: center;
+          }
+
           .tns-inner {
             border-radius: 25px;
             overflow: hidden;
@@ -303,8 +308,13 @@
             }
 
             .tns-nav {
-              margin-top: 50px;
-              margin-bottom: 50px;
+              margin-top: 30px;
+              margin-bottom: 30px;
+
+              button {
+                width: 25px;
+                height: 10px;
+              }
             }
           }
         }

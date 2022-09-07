@@ -15,6 +15,7 @@
     &::before {
       left: 0;
       right: 60%;
+      top: -4px;
       border-radius: 0 10px 10px 0;
       background: $secondary;
     }
@@ -22,6 +23,7 @@
     &::after {
       right: 0;
       left: 60%;
+      bottom: -4px;
       border-radius: 10px 0 0 10px;
       background: $secondary;
     }

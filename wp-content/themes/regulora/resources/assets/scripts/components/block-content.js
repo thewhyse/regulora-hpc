@@ -39,23 +39,25 @@ const makeRequest = ( blockID, page, currentPageID ) => {
 const setListeners = ( element, blockID ) => {
     let pagination = element.querySelector( '.pagination' );
     let currentPageID = element.dataset.cp;
-    pagination.addEventListener( 'click', function( e ) {
-        e.preventDefault();
-        let target = e.target;
-        if ( target.tagName == 'svg' || target.tagName == 'path' ) {
-            target = target.closest( 'a' );
-        }
-        if ( target.tagName == 'A' && target.classList.contains( 'page-numbers' ) ) {
-            let link = target.href;
-            let pageNum = 1;
-            link = link.match( /(page\/(\d+)*)/i );
-            if ( link && typeof link[ 2 ] !== undefined ) {
-                pageNum = link[ 2 ];
+    if ( pagination ) {
+        pagination.addEventListener( 'click', function ( e ) {
+            e.preventDefault();
+            let target = e.target;
+            if ( target.tagName == 'svg' || target.tagName == 'path' ) {
+                target = target.closest( 'a' );
             }
-    
-            makeRequest( blockID, pageNum, currentPageID );
-        }
-    } )
+            if ( target.tagName == 'A' && target.classList.contains( 'page-numbers' ) ) {
+                let link = target.href;
+                let pageNum = 1;
+                link = link.match( /(page\/(\d+)*)/i );
+                if ( link && typeof link[ 2 ] !== undefined ) {
+                    pageNum = link[ 2 ];
+                }
+            
+                makeRequest( blockID, pageNum, currentPageID );
+            }
+        } )
+    }
 }
 
 const init = () => {

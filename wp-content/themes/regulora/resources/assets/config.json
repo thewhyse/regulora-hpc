@@ -44,10 +44,6 @@
     {
       "key": "reviews-and-news",
       "src": "/reviews-and-news/"
-    },
-    {
-      "key": "single-news",
-      "src": "/lorem-ipsum-2/"
     }
   ],
   "watch": [
