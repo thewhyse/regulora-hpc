@@ -128,18 +128,6 @@
   background-color: $white;
 }
 
-@include media-breakpoint-up(sm) {
-  .alignleft {
-    float: left;
-    margin-right: ($spacer / 2);
-  }
-
-  .alignright {
-    float: right;
-    margin-left: ($spacer / 2);
-  }
-}
-
 /** Captions */
 .wp-caption {
   @extend .figure;
@@ -158,4 +146,24 @@
 .screen-reader-text {
   @extend .visually-hidden;
   @extend .visually-hidden-focusable;
+}
+
+@include media-breakpoint-down(lg) {
+  .alignwide {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .alignleft {
+    float: left;
+    margin-right: ($spacer / 2);
+  }
+
+  .alignright {
+    float: right;
+    margin-left: ($spacer / 2);
+  }
 }
