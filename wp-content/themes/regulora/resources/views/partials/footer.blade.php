@@ -7,7 +7,7 @@
             {!! \App\Controllers\App::siteLogo( 'footer' ) !!}
           </a>
         </div>
-        <div class="col-12 col-lg-11 p-0">
+        <div class="col-12 col-lg-11 p-0 ps-lg-5">
           <div class="row mx-0 h-100">
             <div class="col-12 mb-lg-2 align-self-start">
               @if (has_nav_menu('footer_navigation'))
