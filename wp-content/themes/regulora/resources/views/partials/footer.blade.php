@@ -26,10 +26,10 @@
     <div class="container">
       <div class="alignwide">
         <div class="row align-items-end gap-3 gap-lg-0">
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-3">
             @php dynamic_sidebar('sidebar-footer-left') @endphp
           </div>
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-5">
             @php dynamic_sidebar('sidebar-footer-center') @endphp
           </div>
           <div class="col-12 col-lg-4">

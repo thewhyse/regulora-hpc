@@ -189,7 +189,15 @@ header.banner {
 
     .eyebrow-section {
       padding: 0;
-      height: 0;
+
+      .wp-block-search {
+        display: flex;
+        align-items: center;
+      }
+
+      .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper input[type=search] {
+        padding: 0 20px;
+      }
     }
 
     .navbar {
@@ -408,7 +416,20 @@ header.banner {
 
     &.sticky-header {
       .eyebrow-section {
-        display: none;
+        padding-right: var(--bs-gutter-x, 0.75rem);
+        padding-left: var(--bs-gutter-x, 0.75rem);
+
+        .wp-block-group .wp-block-group__inner-container .wp-block-columns .wp-block-column {
+          padding: 3px 0;
+
+          &:first-child {
+            padding: 0;
+          }
+
+          .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper input[type=search] {
+            padding: 2px 4px;
+          }
+        }
       }
 
       .navbar {
