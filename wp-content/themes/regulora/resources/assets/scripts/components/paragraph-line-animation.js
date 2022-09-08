@@ -62,11 +62,11 @@ const addLine = ( element ) => {
     }
     if ( onTheLeft ) {
         spanLine.style.left = 0;
-        spanLine.style.right = ( window.innerWidth - offsets.left ) + 'px';
+        spanLine.style.right = ( window.innerWidth - coords.left ) + 'px';
         spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
     } else {
         spanLine.style.right = 0;
-        spanLine.style.left = ( offsets.left + coords.width + 15 ) + 'px';
+        spanLine.style.left = ( coords.left + coords.width + 15 ) + 'px';
         spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
     }
     document.body.appendChild( spanLine );
@@ -90,11 +90,11 @@ const addLine = ( element ) => {
         offsets = cumulativeOffset( element );
         if ( onTheLeft ) {
             spanLine.style.left = 0;
-            spanLine.style.right = ( window.innerWidth - offsets.left ) + 'px';
+            spanLine.style.right = ( window.innerWidth - coords.left ) + 'px';
             spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         } else {
             spanLine.style.right = 0;
-            spanLine.style.left = ( offsets.left + coords.width + 15 ) + 'px';
+            spanLine.style.left = ( coords.left + coords.width + 15 ) + 'px';
             spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         }
     } )
@@ -117,11 +117,11 @@ const addLine = ( element ) => {
         offsets = cumulativeOffset( element );
         if ( onTheLeft ) {
             spanLine.style.left = 0;
-            spanLine.style.right = ( window.innerWidth - offsets.left ) + 'px';
+            spanLine.style.right = ( window.innerWidth - coords.left ) + 'px';
             spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         } else {
             spanLine.style.right = 0;
-            spanLine.style.left = ( offsets.left + coords.width + 15 ) + 'px';
+            spanLine.style.left = ( coords.left + coords.width + 15 ) + 'px';
             spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         }
     } )
