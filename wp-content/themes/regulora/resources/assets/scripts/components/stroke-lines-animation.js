@@ -347,6 +347,7 @@ const infographicLinesRedraw = ( blockCoords, objects ) => {
 
 const addLines = ( element ) => {
     let coords = element.getBoundingClientRect();
+    let coordsCum = cumulativeOffset( element );
     let targetLeft, targetRight;
     element.classList.forEach( className => {
        if ( className.indexOf( 'target-' ) > -1 ) {
@@ -363,29 +364,43 @@ const addLines = ( element ) => {
        }
     } );
     
+    
+    
     let spanLineLeft = document.createElement( 'span' );
     spanLineLeft.classList.add( 'line-left' );
     let spanLineRight = document.createElement( 'span' );
     spanLineRight.classList.add( 'line-right' );
     
-    if ( targetLeft && window.innerWidth > 781 ) {
-        spanLineLeft.style.left = ( targetLeft.left * -1 + 32 ) + 'px';
-        spanLineLeft.style.right = ( targetLeft.left + coords.width + 32 ) + 'px';
-        spanLineLeft.dataset.right = ( coords.width - 10 );
-    } else {
-        spanLineLeft.style.left = ( coords.left * -1) + 'px';
-        spanLineLeft.style.right = ( coords.left + coords.width ) + 'px';
-        spanLineLeft.dataset.right = ( coords.width - 10 );
-    }
+    if ( window.innerWidth <= 781 && element.classList.contains( 'like-stroke' ) ) {
+        element.style.display = 'inline-block';
     
-    if ( targetRight && window.innerWidth > 781 ) {
-        spanLineRight.style.left = ( coords.width - 10 ) + 'px';
-        spanLineRight.style.right = '10px';
-        spanLineRight.dataset.right = ( targetRight.left - coords.width - coords.left ) * -1 - 40;
+        spanLineLeft.style.left = ( coordsCum.left * -1 ) + 'px';
+        spanLineLeft.style.right = ( coordsCum.left + coords.width ) + 'px';
+        spanLineLeft.dataset.right = ( coords.width - 10 );
+    
+        spanLineRight.style.left = coords.width + 'px';
+        spanLineRight.style.right = '0px';
+        spanLineRight.dataset.right = ( document.body.offsetWidth - coords.width - coords.left + 10 ) * -1;
     } else {
-        spanLineRight.style.left = ( coords.width - 10 ) + 'px';
-        spanLineRight.style.right = '10px';
-        spanLineRight.dataset.right = ( window.innerWidth - coords.width - coords.left ) * -1 - 40;
+        if ( targetLeft && window.innerWidth > 781 ) {
+            spanLineLeft.style.left = ( targetLeft.left * -1 + 32 ) + 'px';
+            spanLineLeft.style.right = ( targetLeft.left + coords.width + 32 ) + 'px';
+            spanLineLeft.dataset.right = ( coords.width - 10 );
+        } else {
+            spanLineLeft.style.left = ( coordsCum.left * -1 ) + 'px';
+            spanLineLeft.style.right = ( coordsCum.left + coords.width ) + 'px';
+            spanLineLeft.dataset.right = ( coords.width - 10 );
+        }
+    
+        if ( targetRight && window.innerWidth > 781 ) {
+            spanLineRight.style.left = ( coords.width - 10 ) + 'px';
+            spanLineRight.style.right = '10px';
+            spanLineRight.dataset.right = ( targetRight.left - coords.width - coords.left ) * -1 - 40;
+        } else {
+            spanLineRight.style.left = ( coords.width - 10 ) + 'px';
+            spanLineRight.style.right = '10px';
+            spanLineRight.dataset.right = ( window.innerWidth - coords.width - coordsCum.left + 10 ) * -1;
+        }
     }
     
     element.appendChild( spanLineLeft );
@@ -444,10 +459,7 @@ const mutationObserver = new MutationObserver( ( mutationsList ) => {
                                         line.style.left = line.dataset.left;
                                     }
                                     if ( 'right' in line.dataset ) {
-                                        console.log(line.dataset.right);
-                                        console.log(line.style.right);
                                         line.style.right = line.dataset.right;
-                                        console.log(line.style.right);
                                     }
                                     if ( 'bottom' in line.dataset ) {
                                         line.style.bottom = line.dataset.bottom;
@@ -459,7 +471,6 @@ const mutationObserver = new MutationObserver( ( mutationsList ) => {
                     if ( stepNumber === '1' ) {
                         timer += 0.5;
                     }
-                    console.log(timer);
                     target.style.transitionDelay = timer + 's';
                     target.nextElementSibling.style.transitionDelay = timer + 's';
                     target.classList.add( 'do-magic' );
