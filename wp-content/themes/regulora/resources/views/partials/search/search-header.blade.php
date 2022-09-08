@@ -11,17 +11,11 @@ $heroImage = \App\Controllers\App::themeOptions( 'global' );
           </h4>
         @endif
         <div class="name col-12">
-          <div class="h4 text-white">{!! \App\Controllers\Search::results( 'totalCount' ) !!}
+          <div class="h4">{!! \App\Controllers\Search::results( 'totalCount' ) !!}
             @if ( $currentPostType != 'any' )
               @switch ($currentPostType)
-                @case( \App\Controllers\Attorney::$postType )
-                Attorneys
-                @break
-                @case( \App\Controllers\Practices::$postType )
-                Practices
-                @break
                 @case( \App\Controllers\NewsInsights::$postType )
-                Wins & Insights
+                News
                 @break
                 @case( \App\Controllers\Page::$postType )
                 Pages

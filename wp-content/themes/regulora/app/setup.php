@@ -421,7 +421,11 @@ add_action( 'pre_get_posts', function ( $q )
         && $q->is_main_query()
         && ( is_category() || is_search() || is_page() )
     ) {
-        $q->set( 'posts_per_page', 1 );
+        if ( is_search() ) {
+            $q->set( 'posts_per_page', 100 );
+        } else {
+            $q->set( 'posts_per_page', 1 );
+        }
     }
 } );
 

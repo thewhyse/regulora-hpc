@@ -2,9 +2,11 @@
 
 namespace App;
 
-use App\Controllers\Attorney;
+use App\Controllers\App;
+//use App\Controllers\Attorney;
 use App\Controllers\NewsInsights;
-use App\Controllers\Practices;
+//use App\Controllers\Practices;
+use App\Controllers\Search;
 
 /**
  * Add <body> classes
@@ -199,3 +201,18 @@ add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args ) {
     }
     return $atts;
 }, 1, 3 );
+
+add_filter( 'render_block_core/search', function ( $block_content, $block )
+{
+    $emptySearchPage = App::themeOptions( 'emptySearchPage' );
+    if ( $emptySearchPage && is_search() && Search::results( 'totalCount' ) <= 0 ) {
+        preg_match( '/<input(.*?)class=\"wp-block-search__input(.*)\"(.*)value=\"(.*?)\"/', $block_content, $founded );
+
+        if ( ! empty( $founded[ 4 ] ) ) {
+            $block_content = str_replace( 'value="' . $founded[ 4 ] . '"', 'value=""', $block_content );
+        }
+    }
+
+    return $block_content;
+
+}, 10, 2 );

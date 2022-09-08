@@ -144,6 +144,7 @@
   .anchor-target {
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    display: inline-block;
 
     & + p {
       opacity: 0;
@@ -188,6 +189,20 @@
 .is-root-container {
   .fadeIn {
     opacity: 1 !important;
+  }
+
+  .infographic {
+    .anchor-target {
+      opacity: 1;
+
+      & + p {
+        opacity: 1;
+      }
+    }
+
+    .connection-line {
+      transition-property: none;
+    }
   }
 }
 

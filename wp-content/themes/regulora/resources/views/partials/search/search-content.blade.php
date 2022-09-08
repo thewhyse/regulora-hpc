@@ -84,9 +84,13 @@
     @endforeach
   </div>
 @else
-  <div class="row">
-    <div class="col-12 empty-result">
-      {{ __( 'No Results Found', 'sage' ) }}
-    </div>
-  </div>
+    @if ( $emptySearchPage = \App\Controllers\App::themeOptions( 'emptySearchPage' ) )
+        {!! apply_filters( 'the_content', $emptySearchPage->post_content ) !!}
+    @else
+        <div class="row">
+            <div class="col-12 empty-result">
+                {{ __( 'No Results Found', 'sage' ) }}
+            </div>
+        </div>
+    @endif
 @endif

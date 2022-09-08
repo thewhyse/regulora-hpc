@@ -276,9 +276,9 @@ const infographicLinesRedraw = ( blockCoords, objects ) => {
                 object.lineV.dataset.bottom = ( vh - object.coordsCum.top - lineHeight + 40 ) + 'px';
                 object.lineEnd.dataset.left = ( object.coords.x + object.coords.width ) + 'px';
         
-                lineLength = Math.abs( vw - tempCoords.right - ( vw - object.coords.x ) );
+                lineLength = Math.abs( vw - tempCoords.right - ( vw - blockCoords.right ) );
                 object.line.style.transitionDuration = ( lineLength / timing ) + 's';
-                object.line.style.transitionDelay = '.5s';
+                // object.line.style.transitionDelay = '.5s';
                 lineVLength = Math.abs( vh - ( tempCoords.top + lineHeight - 40 ) - ( vh - object.coordsCum.top - lineHeight + 40 ) );
                 object.lineV.style.transitionDuration = ( lineVLength / timing ) + 's';
                 object.lineV.style.transitionDelay = ( lineLength / timing ) + 's';
@@ -298,14 +298,14 @@ const infographicLinesRedraw = ( blockCoords, objects ) => {
                     // lineV.style.left = ( blockCoords.right - 3 ) + 'px';
                     object.lineV.style.right = ( vw - object.coords.x - ( object.coords.width * 0.30 ) ) + 'px';
                     object.lineV.style.top = ( tempCoords.top + lineHeight - 40 ) + 'px';
-                    object.lineV.style.bottom = ( object.line.classList.contains( 'do-magic' ) ? ( vh - object.coordsCum.top - 21 ) : ( vh - tempCoords.top + lineHeight - 40 ) ) + 'px';
+                    object.lineV.style.bottom = ( object.line.classList.contains( 'do-magic' ) ? ( vh - object.coordsCum.top - 16 ) : ( vh - tempCoords.top + lineHeight - 40 ) ) + 'px';
             
                     object.line.dataset.left = ( object.coords.x + object.coords.width * 0.30 ) + 'px';
-                    object.lineV.dataset.bottom = ( vh - object.coordsCum.top - 21 ) + 'px';
+                    object.lineV.dataset.bottom = ( vh - object.coordsCum.top - 16 ) + 'px';
             
-                    lineLength = Math.abs( vw - tempCoords.right - ( vw - object.coords.x ) );
-                    object.line.style.transitionDuration = ( lineLength / timing + 0.5 ) + 's';
-                    lineVLength = Math.abs( vh - ( tempCoords.top + lineHeight - 40 ) - ( vh - object.coordsCum.top - lineHeight + 40 ) );
+                    lineLength = Math.abs(   vw - ( object.coords.x + object.coords.width * 0.30 ) - ( vw - tempCoords.left ) );
+                    object.line.style.transitionDuration = ( lineLength / timing ) + 's';
+                    lineVLength = Math.abs( vh - ( tempCoords.top + lineHeight - 40 ) - ( vh - object.coordsCum.top - 16 ) );
                     object.lineV.style.transitionDuration = ( lineVLength / timing ) + 's';
                     object.lineV.style.transitionDelay = ( lineLength / timing ) + 's';
                 }

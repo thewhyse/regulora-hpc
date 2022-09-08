@@ -118,6 +118,11 @@ h6,
   color: $secondary;
 }
 
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .wp-block-separator {
   border-bottom: 0;
 }
