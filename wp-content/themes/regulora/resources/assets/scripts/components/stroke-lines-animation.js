@@ -1,5 +1,5 @@
 const lines = document.querySelectorAll( '.is-style-stroke-style, .like-stroke' );
-const lineHeight = 103;
+const lineHeight = 83;
 const infographicsStore = [];
 
 const cumulativeOffset = (element) => {
@@ -301,11 +301,11 @@ const infographicLinesRedraw = ( blockCoords, objects ) => {
                     object.lineV.style.bottom = ( object.line.classList.contains( 'do-magic' ) ? ( vh - object.coordsCum.top - 16 ) : ( vh - tempCoords.top + lineHeight - 40 ) ) + 'px';
             
                     object.line.dataset.left = ( object.coords.x + object.coords.width * 0.30 ) + 'px';
-                    object.lineV.dataset.bottom = ( vh - object.coordsCum.top - 16 ) + 'px';
+                    object.lineV.dataset.bottom = ( vh - object.coordsCum.top - 19 ) + 'px';
             
                     lineLength = Math.abs(   vw - ( object.coords.x + object.coords.width * 0.30 ) - ( vw - tempCoords.left ) );
                     object.line.style.transitionDuration = ( lineLength / timing ) + 's';
-                    lineVLength = Math.abs( vh - ( tempCoords.top + lineHeight - 40 ) - ( vh - object.coordsCum.top - 16 ) );
+                    lineVLength = Math.abs( vh - ( tempCoords.top + lineHeight - 40 ) - ( vh - object.coordsCum.top - 19 ) );
                     object.lineV.style.transitionDuration = ( lineVLength / timing ) + 's';
                     object.lineV.style.transitionDelay = ( lineLength / timing ) + 's';
                 }
