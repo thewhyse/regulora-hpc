@@ -21,6 +21,14 @@ const processElements = () => {
     } );
 };
 
+const getElementWidth = ( element ) => {
+    if (typeof Element.prototype.getBoundingClientRect === 'function') {
+        return element.getBoundingClientRect().width;
+    } else {
+        return element.offsetWidth;
+    }
+};
+
 const addLine = ( element ) => {
     let onTheLeft = element.classList.contains( 'left' );
     let spanLine = document.createElement( 'span' );
@@ -66,7 +74,7 @@ const addLine = ( element ) => {
         spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
     } else {
         spanLine.style.right = 0;
-        spanLine.style.left = ( coords.left + coords.width + 15 ) + 'px';
+        spanLine.style.left = ( coords.left + getElementWidth( element ) + 15 ) + 'px';
         spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
     }
     document.body.appendChild( spanLine );
@@ -94,7 +102,7 @@ const addLine = ( element ) => {
             spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         } else {
             spanLine.style.right = 0;
-            spanLine.style.left = ( coords.left + coords.width + 15 ) + 'px';
+            spanLine.style.left = ( coords.left + getElementWidth( element ) + 15 ) + 'px';
             spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         }
     } )
@@ -121,7 +129,7 @@ const addLine = ( element ) => {
             spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         } else {
             spanLine.style.right = 0;
-            spanLine.style.left = ( coords.left + coords.width + 15 ) + 'px';
+            spanLine.style.left = ( coords.left + getElementWidth( element ) + 15 ) + 'px';
             spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
         }
     } )
