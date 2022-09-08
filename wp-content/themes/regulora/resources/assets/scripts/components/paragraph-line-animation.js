@@ -22,10 +22,19 @@ const processElements = () => {
 };
 
 const getElementWidth = ( element ) => {
-    if (typeof Element.prototype.getBoundingClientRect === 'function') {
-        return element.getBoundingClientRect().width;
-    } else {
+    if ([
+            'iPad Simulator',
+            'iPhone Simulator',
+            'iPod Simulator',
+            'iPad',
+            'iPhone',
+            'iPod',
+        ].includes(navigator.platform)
+        // iPad on iOS 13 detection
+        || (navigator.userAgent.includes('Mac') && 'ontouchend' in document)) {
         return element.offsetWidth;
+    } else {
+        return element.getBoundingClientRect().width;
     }
 };
 
