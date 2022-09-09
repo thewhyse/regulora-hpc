@@ -146,7 +146,7 @@ trait ModuleTwitter
                                             <?php endif; ?>
                                         </div>
                                         <?php if ( $item[ 'tweetLink' ] ) : ?>
-                                            <a href="<?= $item[ 'tweetHandle' ] ?>" class="stretched-link" target="_blank"></a>
+                                            <a href="<?= $item[ 'tweetLink' ] ?>" class="stretched-link" target="_blank"></a>
                                         <?php endif; ?>
                                     </div>
                                 <?php endforeach; ?>
