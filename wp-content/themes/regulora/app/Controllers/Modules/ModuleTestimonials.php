@@ -60,6 +60,7 @@ trait ModuleTestimonials
                 'public'             => true,
                 'publicly_queryable' => false,
                 'show_ui'            => true,
+                'exclude_from_search'=> true,
                 'menu_icon'          => 'dashicons-format-chat',
                 'menu_position'      => 24,
                 'rewrite'            => array(

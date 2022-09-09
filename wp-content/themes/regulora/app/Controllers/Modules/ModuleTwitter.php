@@ -31,6 +31,8 @@ trait ModuleTwitter
      */
     public static $acfTweetText = 'tweet_text';
     public static $acfTweetHashtags = 'tweet_hashtags';
+    public static $acfTweetHandle = 'tweet_handle';
+    public static $acfTweetLink = 'tweet_link';
     public static $acfTweetsLimit = 'tweets_limit';
     public static $acfTweetsRandom = 'tweets_random';
 
@@ -57,6 +59,7 @@ trait ModuleTwitter
                 'public'             => true,
                 'publicly_queryable' => false,
                 'show_ui'            => true,
+                'exclude_from_search'=> true,
                 'menu_icon'          => 'dashicons-twitter',
                 'menu_position'      => 24,
                 'rewrite'            => array(
@@ -131,12 +134,20 @@ trait ModuleTwitter
                             </div>
                             <div class="tweets-slider">
                                 <?php foreach ( $testimonials as $index => $item ) : ?>
-                                    <div class="slide-item">
+                                    <div class="slide-item position-relative">
                                         <div class="slide-content">
                                             <div class="isc">
                                                 <?= $item[ 'content' ] ?>&nbsp;&nbsp;<strong><?= $item[ 'hashtags' ] ?></strong>
                                             </div>
+                                            <?php if ( $item[ 'tweetHandle' ] ) : ?>
+                                                <div class="tweet-handle">
+                                                    <?= $item[ 'tweetHandle' ] ?>
+                                                </div>
+                                            <?php endif; ?>
                                         </div>
+                                        <?php if ( $item[ 'tweetLink' ] ) : ?>
+                                            <a href="<?= $item[ 'tweetHandle' ] ?>" class="stretched-link" target="_blank"></a>
+                                        <?php endif; ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -176,9 +187,14 @@ trait ModuleTwitter
         return  array_map( function( $post ) {
             $tweetText = get_field( static::$acfTweetText, $post->ID );
             $tweetHashtags = get_field( static::$acfTweetHashtags, $post->ID );
+            $tweetHashtags = get_field( static::$acfTweetHashtags, $post->ID );
+            $tweetHandle   = get_field( static::$acfTweetHandle, $post->ID );
+            $tweetLink     = get_field( static::$acfTweetLink, $post->ID );
             return array(
                 'id'            => $post->ID,
                 'hashtags'      => $tweetHashtags,
+                'tweetHandle'   => $tweetHandle,
+                'tweetLink'     => $tweetLink,
                 'content'       => "<span>&ldquo;" . $tweetText . "&rdquo;</span>",
             );
         }, $posts->posts );

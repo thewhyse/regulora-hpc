@@ -216,3 +216,22 @@ add_filter( 'render_block_core/search', function ( $block_content, $block )
     return $block_content;
 
 }, 10, 2 );
+
+add_filter( 'pre_get_posts', function ( $query ) {
+    if ( $query->is_search && !is_admin() ) {
+        $query->set( 'meta_query', array(
+            'relation' => 'OR',
+            array(
+                'key' => 'exclude_from_search',
+                'value' => 'hidden',
+                'compare' => 'NOT EXISTS',
+            ),
+            array(
+                'key' => 'exclude_from_search',
+                'value' => '1',
+                'compare' => '!=',
+            ),
+        ));
+    }
+    return $query;
+} );
