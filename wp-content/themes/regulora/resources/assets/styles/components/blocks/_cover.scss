@@ -1,4 +1,6 @@
 .wp-block-cover {
+  width: 100vw;
+
   &.has-custom-content-position {
     .wp-block-cover__inner-container {
       width: inherit !important;

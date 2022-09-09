@@ -19,10 +19,10 @@ module.exports = {
         dimensions: [
           {
             width: 1920,
-            height: 1080,
+            height: 1200,
           },
           {
-            width: 1360,
+            width: 1400,
             height: 1080,
           },
           {
