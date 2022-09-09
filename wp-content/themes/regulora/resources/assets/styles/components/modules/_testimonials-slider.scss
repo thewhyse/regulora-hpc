@@ -73,6 +73,8 @@
           line-height: 1.35;
           font-weight: 400;
           color: $black;
+          //margin-left: 2px;
+          //margin-right: 2px;
 
           .slide-content {
             position: relative;
@@ -119,6 +121,8 @@
         .tns-nav {
           text-align: center;
           margin-top: 90px;
+          position: relative;
+          z-index: 1;
 
           button {
             border: none;
@@ -133,6 +137,11 @@
               background: $blue;
             }
           }
+        }
+
+        .controll-buttons {
+          position: relative;
+          z-index: 1;
         }
       }
     }

@@ -24,7 +24,7 @@ const sliderInit = ( block ) => {
         autoplayTimeout: 6000,
         mouseDrag: true,
         edgePadding: 0,
-        gutter: 5,
+        gutter: 0,
         autoHeight: true,
     };
     
