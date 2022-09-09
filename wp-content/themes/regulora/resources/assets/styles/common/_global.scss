@@ -222,18 +222,33 @@ a,
     display: inline-block;
     background: #fff;
     padding: 0 50px;
-  }
+    position: relative;
 
-  &::before {
-    content: "";
-    height: 3px;
-    width: 100vw;
-    background: $secondary;
-    position: absolute;
-    left: 50%;
-    margin-left: -50vw;
-    top: 50%;
-    z-index: -1;
+    &::before {
+      content: "";
+      height: 3px;
+      width: 50vw;
+      background: $secondary;
+      position: absolute;
+      left: 0;
+      margin-left: -50vw;
+      top: 50%;
+      z-index: -1;
+      border-radius: 0 10px 10px 0;
+    }
+
+    &::after {
+      content: "";
+      height: 3px;
+      width: 50vw;
+      background: $secondary;
+      position: absolute;
+      right: 0;
+      margin-right: -50vw;
+      top: 50%;
+      z-index: -1;
+      border-radius: 10px 0 0 10px;
+    }
   }
 }
 
@@ -253,7 +268,7 @@ a,
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   html {
     margin-top: 0 !important;
   }

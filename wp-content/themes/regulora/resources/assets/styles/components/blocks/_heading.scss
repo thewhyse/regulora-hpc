@@ -16,7 +16,7 @@ h5 {
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   h1, 
   h2 {
     &.is-style-use-margin-bottom {

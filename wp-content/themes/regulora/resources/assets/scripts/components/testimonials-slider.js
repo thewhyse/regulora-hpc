@@ -4,8 +4,8 @@ const sliders = [];
 const blocks = document.querySelectorAll( '.wp-block-testimonials-slider' );
 
 const sliderInit = ( block ) => {
-    let prevBut = window.innerWidth >= 992 ? '.prev-but-place.desktop' : '.prev-but-place.mobile';
-    let nextBut = window.innerWidth >= 992 ? '.next-but-place.desktop' : '.next-but-place.mobile';
+    let prevBut = document.body.offsetWidth >= 992 ? '.prev-but-place.desktop' : '.prev-but-place.mobile';
+    let nextBut = document.body.offsetWidth >= 992 ? '.next-but-place.desktop' : '.next-but-place.mobile';
     let options = {
         container: block.querySelector( '.testimonials-slider' ),
         items: 1,
@@ -25,7 +25,7 @@ const sliderInit = ( block ) => {
         mouseDrag: true,
         edgePadding: 0,
         gutter: 0,
-        autoHeight: false,
+        autoHeight: true,
     };
     
     let slider = tns( options );
@@ -35,7 +35,9 @@ const sliderInit = ( block ) => {
 
 const addSliders = () => {
     blocks.forEach( block => {
-        sliderInit( block );
+        setTimeout( function() {
+            sliderInit( block );
+        }, 100 );
     } )
 }
 

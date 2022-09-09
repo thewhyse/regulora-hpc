@@ -58,7 +58,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .category .main .list.view-type-grid .post-item {
     flex-basis: 100%;
     margin-bottom: 35px;

@@ -181,7 +181,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .stats .current-total-num {
     font-size: 16px;
     line-height: 1.25;

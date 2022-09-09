@@ -371,12 +371,14 @@ const addLines = ( element ) => {
     let spanLineRight = document.createElement( 'span' );
     spanLineRight.classList.add( 'line-right' );
     
-    if ( window.innerWidth <= 781 && element.classList.contains( 'like-stroke' ) ) {
+    if ( document.body.offsetWidth <= 781 && element.classList.contains( 'like-stroke' ) ) {
         element.style.display = 'inline-block';
+        
+        let plus = ( element.classList.contains( 'plus' ) ) ? 100 : 10;
     
         spanLineLeft.style.left = ( coordsCum.left * -1 ) + 'px';
         spanLineLeft.style.right = ( coordsCum.left + coords.width ) + 'px';
-        spanLineLeft.dataset.right = ( coords.width - 10 );
+        spanLineLeft.dataset.right = ( coords.width - plus );
     
         spanLineRight.style.left = coords.width + 'px';
         spanLineRight.style.right = '0px';
@@ -429,15 +431,17 @@ const mutationObserver = new MutationObserver( ( mutationsList ) => {
     mutationsList.forEach( mutation => {
         const { target } = mutation;
         if (mutation.attributeName === 'class' && target.classList.contains( 'action' )) {
-            if ( target.classList.contains( 'line-left' ) ) {
+            if ( target.classList.contains( 'line-left' ) && ! target.classList.contains( 'animation-finished' ) ) {
                 if ( typeof target.dataset.right !== undefined )
                     target.style.right = target.dataset.right + 'px';
+                target.classList.add( 'animation-finished' );
             }
     
-            if ( target.classList.contains( 'line-right' ) ) {
+            if ( target.classList.contains( 'line-right' ) && ! target.classList.contains( 'animation-finished' ) ) {
                 setTimeout( function() {
                     if ( typeof target.dataset.right !== undefined )
                         target.style.right = target.dataset.right + 'px';
+                    target.classList.add( 'animation-finished' );
                 }, 1000 );
             }
     
@@ -483,7 +487,7 @@ const mutationObserver = new MutationObserver( ( mutationsList ) => {
 
 const init = () => {
     if ( lines )
-        setTimeout( processElements, 500 );
+        setTimeout( processElements, 700 );
 };
 
 export { init };

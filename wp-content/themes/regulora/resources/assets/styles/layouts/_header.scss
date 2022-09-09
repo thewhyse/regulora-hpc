@@ -273,7 +273,7 @@ header.banner {
 
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .eyebrow-section {
     padding: 0;
     padding-right: var(--bs-gutter-x, 0.75rem);

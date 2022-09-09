@@ -253,7 +253,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .wp-block-image {
     &.is-style-rounded {
       img {

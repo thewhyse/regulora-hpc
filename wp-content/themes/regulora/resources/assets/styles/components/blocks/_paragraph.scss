@@ -106,7 +106,7 @@ figure {
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   p.has-extra-large-font-size {
     line-height: 75px;
     font-size: 75px;

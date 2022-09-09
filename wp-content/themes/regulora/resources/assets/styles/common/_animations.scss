@@ -207,7 +207,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .active-line {
     height: 3px;
   }

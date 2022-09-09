@@ -68,7 +68,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .wp-block-columns {
     &.is-style-steps {
       margin-left: -20px;

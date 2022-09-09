@@ -148,7 +148,7 @@
   @extend .visually-hidden-focusable;
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .alignwide {
     max-width: 100%;
     margin-left: 0;

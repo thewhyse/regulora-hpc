@@ -83,7 +83,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .wp-block-pullquote {
     padding: 35px var(--bs-gutter-x, 0.75rem);
     text-align: left;

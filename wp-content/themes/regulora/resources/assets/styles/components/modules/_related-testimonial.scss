@@ -43,7 +43,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .content-block.testimonial-block {
     padding: var(--block-vertical-distance-small) var(--bs-gutter-x);
 

@@ -78,7 +78,7 @@ const addLine = ( element ) => {
         lineHeight = lineHeight / 2;
     }
     if ( onTheLeft ) {
-        let spaceMob = ( document.body.offsetWidth < 992 ) ? 7 : 0;
+        let spaceMob = ( document.body.offsetWidth < 992 ) ? 7 : 7;
         spanLine.style.left = 0;
         spanLine.style.right = ( window.innerWidth - coords.left + spaceMob ) + 'px';
         spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
