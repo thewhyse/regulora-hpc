@@ -331,6 +331,29 @@
           }
         }
       }
+
+      &.view-head {
+        .slider-container {
+          .tns-outer {
+            width: 85%;
+          }
+          .slider-inner {
+            flex-direction: row;
+
+            .prev-but-place {
+              margin-right: 10px;
+              margin-left: -13px;
+              margin-top: -100px;
+            }
+
+            .next-but-place {
+              margin-right: -13px;
+              margin-left: 10px;
+              margin-top: -100px;
+            }
+          }
+        }
+      }
     }
   }
 }
