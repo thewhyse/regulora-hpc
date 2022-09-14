@@ -238,10 +238,22 @@
 
           .prev-but-place {
             margin-right: 16px;
+
+            svg {
+              margin-top: -68px;
+            }
           }
 
           .next-but-place {
             margin-left: 18px;
+
+            svg {
+              margin-top: -68px;
+            }
+          }
+
+          .tns-nav {
+            margin-top: 30px;
           }
         }
       }
