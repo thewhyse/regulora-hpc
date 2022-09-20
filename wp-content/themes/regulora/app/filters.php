@@ -217,13 +217,13 @@ add_filter( 'render_block_core/search', function ( $block_content, $block )
 
 }, 10, 2 );
 
-add_filter( 'render_block_core/cover', function ( $block_content, $block )
-{
-    $block_content = str_replace( '.svg"', '.svg?t=' . time() . '"', $block_content );
-
-    return $block_content;
-
-}, 10, 2 );
+//add_filter( 'render_block_core/cover', function ( $block_content, $block )
+//{
+//    $block_content = str_replace( '.svg"', '.svg?t=' . time() . '"', $block_content );
+//
+//    return $block_content;
+//
+//}, 10, 2 );
 
 add_filter( 'pre_get_posts', function ( $query ) {
     if ( $query->is_search && !is_admin() ) {

@@ -7,6 +7,7 @@ import {init as paragraphLineAnimation} from "../components/paragraph-line-anima
 import {init as strokeLinesAnimation} from "../components/stroke-lines-animation";
 import {init as animationStart} from "../components/animate-by-viewport";
 import {init as tabs} from "../components/tabs";
+// import {init as iconPosition} from "../components/icon-position";
 // import {ScrollSpy, Collapse} from "bootstrap";
 
 export default {
@@ -21,6 +22,17 @@ export default {
     Modernizr.addTest('has-scroll', function() {
       return window.innerHeight < document.body.scrollHeight;
     });
+    
+    const coverBlock = document.querySelectorAll( '.wp-block-cover' );
+    if ( coverBlock ) {
+      coverBlock.forEach( block => {
+        const img = block.querySelector( 'img.wp-block-cover__image-background' );
+        if ( img ) {
+          let src = img.getAttribute( 'src' ) + '?t=' + Date.now();
+          img.setAttribute( 'src', src );
+        }
+      } )
+    }
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
@@ -128,6 +140,7 @@ export default {
   
     testimonialsSlider();
     tweetsSlider();
+    // iconPosition();
     paragraphLineAnimation();
     strokeLinesAnimation();
     animationStart();
