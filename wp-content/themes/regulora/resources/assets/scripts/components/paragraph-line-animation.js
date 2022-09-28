@@ -88,7 +88,30 @@ const addLine = ( element ) => {
         spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
     }
     document.body.appendChild( spanLine );
+    setTimeout( function() {
+        lineHeight = parseInt( window.getComputedStyle( element,null ).getPropertyValue('line-height') );
     
+        if ( isNaN( lineHeight ) ) {
+            lineHeight = 20;
+            if ( window.innerWidth < 992 ) {
+                lineHeight = 35;
+            }
+        } else {
+            lineHeight = lineHeight / 2;
+        }
+        
+        coords = element.getBoundingClientRect();
+        offsets = cumulativeOffset( element );
+        if ( onTheLeft ) {
+            spanLine.style.left = 0;
+            spanLine.style.right = ( window.innerWidth - coords.left ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
+        } else {
+            spanLine.style.right = 0;
+            spanLine.style.left = ( coords.left + getElementWidth( element ) + 15 ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
+        }
+    }, 1000 );
     // On window resize
     window.addEventListener( 'resize', function() {
         lineHeight = parseInt( window.getComputedStyle( element,null ).getPropertyValue('line-height') );
@@ -101,8 +124,6 @@ const addLine = ( element ) => {
         } else {
             lineHeight = lineHeight / 2;
         }
-        
-        
         
         coords = element.getBoundingClientRect();
         offsets = cumulativeOffset( element );
@@ -128,8 +149,6 @@ const addLine = ( element ) => {
         } else {
             lineHeight = lineHeight / 2;
         }
-        
-        
         
         coords = element.getBoundingClientRect();
         offsets = cumulativeOffset( element );
