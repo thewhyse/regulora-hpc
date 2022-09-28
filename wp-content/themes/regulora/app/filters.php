@@ -217,13 +217,17 @@ add_filter( 'render_block_core/search', function ( $block_content, $block )
 
 }, 10, 2 );
 
-//add_filter( 'render_block_core/cover', function ( $block_content, $block )
-//{
+add_filter( 'render_block_core/cover', function ( $block_content, $block )
+{
+    preg_match('/<img[^>]+src="([^">]+)"/', $block_content, $result );
+    if ( isset( $result[ 1 ] ) && strpos( $result[ 1 ], '.svg' ) !== false ) {
+        $block_content = str_replace( "src=\"{$result[ 1 ]}\"", 'data-src="' . $result[ 1 ] . '?t=' . time() . '"', $block_content );
+    }
 //    $block_content = str_replace( '.svg"', '.svg?t=' . time() . '"', $block_content );
-//
-//    return $block_content;
-//
-//}, 10, 2 );
+
+    return $block_content;
+
+}, 10, 2 );
 
 add_filter( 'pre_get_posts', function ( $query ) {
     if ( $query->is_search && !is_admin() ) {

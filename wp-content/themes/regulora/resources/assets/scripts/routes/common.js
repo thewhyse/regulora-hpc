@@ -27,8 +27,8 @@ export default {
     if ( coverBlock ) {
       coverBlock.forEach( block => {
         const img = block.querySelector( 'img.wp-block-cover__image-background' );
-        if ( img ) {
-          let src = img.getAttribute( 'src' ) + '?t=' + Date.now();
+        if ( img && 'src' in img.dataset ) {
+          let src = img.dataset.src + '?t=' + Date.now();
           img.setAttribute( 'src', src );
         }
       } )
