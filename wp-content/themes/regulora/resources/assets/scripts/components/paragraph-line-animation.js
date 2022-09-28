@@ -81,11 +81,11 @@ const addLine = ( element ) => {
         let spaceMob = ( document.body.offsetWidth < 992 ) ? 7 : 7;
         spanLine.style.left = 0;
         spanLine.style.right = ( window.innerWidth - coords.left + spaceMob ) + 'px';
-        spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
+        spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
     } else {
         spanLine.style.right = 0;
         spanLine.style.left = ( coords.left + getElementWidth( element ) + 15 ) + 'px';
-        spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
+        spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
     }
     document.body.appendChild( spanLine );
     
@@ -109,11 +109,11 @@ const addLine = ( element ) => {
         if ( onTheLeft ) {
             spanLine.style.left = 0;
             spanLine.style.right = ( window.innerWidth - coords.left ) + 'px';
-            spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
         } else {
             spanLine.style.right = 0;
             spanLine.style.left = ( coords.left + getElementWidth( element ) + 15 ) + 'px';
-            spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
         }
     } )
     
@@ -136,11 +136,11 @@ const addLine = ( element ) => {
         if ( onTheLeft ) {
             spanLine.style.left = 0;
             spanLine.style.right = ( window.innerWidth - coords.left ) + 'px';
-            spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
         } else {
             spanLine.style.right = 0;
             spanLine.style.left = ( coords.left + getElementWidth( element ) + 15 ) + 'px';
-            spanLine.style.top = ( offsets.top + lineHeight - 7 ) + 'px';
+            spanLine.style.top = ( offsets.top + lineHeight - 5 ) + 'px';
         }
     } )
 };
