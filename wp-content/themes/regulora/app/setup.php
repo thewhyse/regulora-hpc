@@ -287,6 +287,7 @@ add_action( 'init', function () {
     remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+    remove_filter( 'the_content', 'convert_smilies', 20 );
 
     add_action( 'wpcf7_enqueue_styles', function () {
         wp_deregister_style( 'contact-form-7' );

@@ -220,7 +220,9 @@ add_filter( 'render_block_core/search', function ( $block_content, $block )
 add_filter( 'render_block_core/cover', function ( $block_content, $block )
 {
     preg_match('/<img[^>]+src="([^">]+)"(.)+(\/>)/', $block_content, $result );
+
     if ( isset( $result[ 1 ] ) && strpos( $result[ 1 ], '.svg' ) !== false ) {
+        var_dump($result);
 //        $block_content = str_replace( "src=\"{$result[ 1 ]}\"", 'data-src="' . $result[ 1 ] . '?t=' . time() . '"', $block_content );
         $svg = file_get_contents( $result[ 1 ] );
         $block_content = str_replace( $result[ 0 ], $svg, $block_content );
