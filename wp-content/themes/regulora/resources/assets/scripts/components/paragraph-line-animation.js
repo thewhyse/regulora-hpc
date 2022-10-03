@@ -72,7 +72,7 @@ const addLine = ( element ) => {
     if ( isNaN( lineHeight ) ) {
         lineHeight = 20;
         if ( window.innerWidth < 992 ) {
-            lineHeight = 35;
+            lineHeight = 31;
         }
     } else {
         lineHeight = lineHeight / 2;
@@ -94,7 +94,7 @@ const addLine = ( element ) => {
         if ( isNaN( lineHeight ) ) {
             lineHeight = 20;
             if ( window.innerWidth < 992 ) {
-                lineHeight = 35;
+                lineHeight = 31;
             }
         } else {
             lineHeight = lineHeight / 2;
@@ -119,7 +119,7 @@ const addLine = ( element ) => {
         if ( isNaN( lineHeight ) ) {
             lineHeight = 20;
             if ( window.innerWidth < 992 ) {
-                lineHeight = 35;
+                lineHeight = 31;
             }
         } else {
             lineHeight = lineHeight / 2;
@@ -144,7 +144,7 @@ const addLine = ( element ) => {
         if ( isNaN( lineHeight ) ) {
             lineHeight = 20;
             if ( window.innerWidth < 992 ) {
-                lineHeight = 35;
+                lineHeight = 31;
             }
         } else {
             lineHeight = lineHeight / 2;
