@@ -219,24 +219,12 @@ add_filter( 'render_block_core/search', function ( $block_content, $block )
 
 add_filter( 'render_block_core/cover', function ( $block_content, $block )
 {
-//    preg_match('/<img[^>]+src="([^">]+)"(.)+(\/>)/', $block_content, $result );
-    preg_match('/<img[^>]+src="([^">]+)"(.)+data-object-position="([^">]+)"(\/>)/', $block_content, $result);
+    preg_match('/<img[^>]+src="([^">]+)"(.)+(\/>)/', $block_content, $result );
+//    preg_match('/<img[^>]+src="([^">]+)"(.)+data-object-position="([^">]+)"(\/>)/', $block_content, $result);
 
     if ( isset( $result[ 1 ] ) && strpos( $result[ 1 ], '.svg' ) !== false ) {
-//        $block_content = str_replace( "src=\"{$result[ 1 ]}\"", 'data-src="' . $result[ 1 ] . '?t=' . time() . '"', $block_content );
-        $style = "";
-        $svgContent = file_get_contents( $result[ 1 ] );
-        if ( ! empty( $result[ 3 ] ) ) {
-            $positions = explode( ' ', $result[ 3 ] );
-//            $style .= "margin-left:" . ( 50 - (int)$positions[0] ) . '%;';
-//            $style .= "margin-top:" . ( 50 - (int)$positions[1] ) . '%;';
-            $svgContent = str_replace( '<svg', '<svg preserveAspectRatio="xMidYMid slice"', $svgContent );
-        }
-        $svg = "<div class='svg-inline'>" . $svgContent . "</div>";
-
-        $block_content = str_replace( $result[ 0 ], $svg, $block_content );
+        $block_content = str_replace( "src=\"{$result[ 1 ]}\"", 'data-src="' . $result[ 1 ] . '"', $block_content );
     }
-//    $block_content = str_replace( '.svg"', '.svg?t=' . time() . '"', $block_content );
 
     return $block_content;
 

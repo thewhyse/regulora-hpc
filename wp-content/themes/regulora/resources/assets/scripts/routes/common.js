@@ -26,21 +26,21 @@ export default {
     const coverBlock = document.querySelectorAll( '.wp-block-cover' );
     if ( coverBlock ) {
       coverBlock.forEach( block => {
-        // const img = block.querySelector( 'img.wp-block-cover__image-background' );
-        // if ( img && 'src' in img.dataset ) {
-        //   let src = img.dataset.src + '?t=' + Date.now();
-        //   img.setAttribute( 'src', src );
-        // }
-        const svg = block.querySelector( 'svg' );
-        if ( svg ) {
-          svg.setAttribute( 'width', block.offsetWidth );
-          svg.setAttribute( 'height', block.offsetHeight );
-  
-          window.addEventListener( 'resize', function() {
-            svg.setAttribute( 'width', block.offsetWidth );
-            svg.setAttribute( 'height', block.offsetHeight );
-          } );
+        const img = block.querySelector( 'img.wp-block-cover__image-background' );
+        if ( img && 'src' in img.dataset ) {
+          let src = img.dataset.src + '?t=' + Date.now();
+          img.setAttribute( 'src', src );
         }
+        // const svg = block.querySelector( 'svg' );
+        // if ( svg ) {
+        //   svg.setAttribute( 'width', block.offsetWidth );
+        //   svg.setAttribute( 'height', block.offsetHeight );
+        //
+        //   window.addEventListener( 'resize', function() {
+        //     svg.setAttribute( 'width', block.offsetWidth );
+        //     svg.setAttribute( 'height', block.offsetHeight );
+        //   } );
+        // }
       } )
     }
   },
