@@ -222,7 +222,7 @@ add_filter( 'render_block_core/cover', function ( $block_content, $block )
     preg_match('/<img[^>]+src="([^">]+)"(.)+(\/>)/', $block_content, $result );
 //    preg_match('/<img[^>]+src="([^">]+)"(.)+data-object-position="([^">]+)"(\/>)/', $block_content, $result);
 
-    if ( isset( $result[ 1 ] ) && strpos( $result[ 1 ], '.svg' ) !== false ) {
+    if ( isset( $result[ 1 ] ) && strpos( $result[ 1 ], '.svg' ) !== false && strpos( $result[ 1 ], 'nocache' ) !== false ) {
         $block_content = str_replace( "src=\"{$result[ 1 ]}\"", 'data-src="' . $result[ 1 ] . '"', $block_content );
     }
 
