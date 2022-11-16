@@ -152,6 +152,13 @@
   }
 }
 
+#HCPs,
+#for-your-patients {
+  .wp-block-button__link {
+    font-size: 30px;
+  }
+}
+
 @include media-breakpoint-between(lg, xl) {
   .wp-block-button {
     &.is-style-short {

@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/wp-content/themes/regulora",
-  "devUrl": "https://regulora-hcp.local",
+  "devUrl": "https://dev-regulora-hcp.pantheonsite.io",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "criticals": [
