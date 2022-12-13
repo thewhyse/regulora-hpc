@@ -126,8 +126,20 @@ export default {
     const prof = document.getElementById( 'prof' );
     if ( prof ) {
       let popupBlock = document.getElementById( 'choice-popup' );
+  
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams( queryString );
+      const userType = urlParams.get('user_type')
+      let silent = false;
+      if ( userType == 'hcp' ) {
+        silent = true;
+        let date = new Date();
+        date.setMonth(date.getMonth() + 6);
+        date = date.toUTCString();
+        document.cookie = "usertype=professional;path=/;expires=" + date;
+      }
       
-      if ( document.cookie.split(';').filter((item) => item.includes('usertype=professional')).length === 0) {
+      if ( document.cookie.split(';').filter((item) => item.includes('usertype=professional')).length === 0 && ! silent) {
         popupBlock.classList.add( 'show' );
         document.body.classList.add( 'popup-show' );
       }
