@@ -6,11 +6,13 @@
     Description: Save CF7 submitted form informations into your WordPress database.
     Author: Code4Life
     Author URI: https://code4life.it/
-    Version: 1.2.1
+    Version: 1.2.2
     Text Domain: wpcf7db
  	Domain Path: /i18n/
 	License: GPLv3
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+    Tested up to: 6.1
  */
 
 // Exit if accessed directly

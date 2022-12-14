@@ -254,3 +254,5 @@ class WPCode_Conditional_Page extends WPCode_Conditional_Type {
 		return $labels;
 	}
 }
+
+new WPCode_Conditional_Page();
